@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "clinyong.vscode-css-modules",
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "ecmel.vscode-html-css",
+    "eamodio.gitlens",
+    "gamunu.vscode-yarn",
+    "analytic-signal.preview-mp4"
+  ]
+}
