@@ -1,0 +1,30 @@
+:root {
+  --gutter-size: 1.2rem;
+
+  // Colors
+  --white: white;
+}
+
+body,
+html {
+  font-family: Inter, sans-serif;
+}
+
+.contain,
+.contain-lg {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: min(var(--screen-lg), calc(100vw - var(--gutter-size) * 2));
+}
+
+.contain-sm {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: min(var(--screen-sm), calc(100vw - var(--gutter-size) * 2));
+}
+
+.contain-gutter {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: calc(100vw - var(--gutter-size));
+}

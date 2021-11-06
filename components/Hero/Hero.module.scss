@@ -1,0 +1,59 @@
+.base {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #4a32ff;
+  background-size: cover;
+
+  // The hero section should be at least as tall as the screen or 550px,
+  // which is the least height that can still accommodate The content.
+  min-height: max(100vh, 550px);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  // These were on the old site, but why?
+  // padding-left: 2.5rem;
+  // padding-right: 2.5rem;
+  color: var(--white);
+  text-shadow: 0 0 15px #ffffff55;
+  width: 100%;
+}
+
+.headingSmall {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.headingLarge {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: metropolis, sans-serif;
+}
+
+.buttonRow {
+  margin-top: 1.25rem;
+}
+
+.ctaBtn {
+  margin-right: 1.25rem;
+}
+
+// You can't use css custom properties in media queries.
+// var(--screen-sm) is defined as 640px in ck.css.
+@media (min-width: 640px) {
+  .headingSmall {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .headingLarge {
+    font-size: 6rem;
+    line-height: 1;
+  }
+}
