@@ -4,5 +4,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "npm.packageManager": "yarn",
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "npm.enableRunFromFolder": true,
+  "npm-scripts.showStartNotification": false
 }
