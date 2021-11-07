@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from './Waves.module.scss'
+import styles from './Waves.module.scss'
 
 export const Waves = () => (
   <svg

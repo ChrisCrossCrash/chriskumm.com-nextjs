@@ -1,4 +1,4 @@
-import * as styles from './Hero.module.scss'
+import styles from './Hero.module.scss'
 import { Waves } from '../Waves/Waves'
 import { heroBg } from './heroBg'
 
