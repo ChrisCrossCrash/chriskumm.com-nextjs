@@ -1,3 +1,5 @@
+@use '../../styles/global-vars';
+
 .base {
   display: flex;
   flex-direction: column;
@@ -41,7 +43,7 @@
   line-height: 2.5rem;
   font-weight: 700;
   text-decoration: none;
-  color: var(--dark);
+  color: global-vars.$color-dark;
 }
 
 .subtitle {

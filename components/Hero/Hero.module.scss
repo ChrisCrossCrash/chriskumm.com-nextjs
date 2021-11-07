@@ -1,3 +1,5 @@
+@use '../../styles/global-vars';
+
 .base {
   position: relative;
   display: flex;
@@ -17,7 +19,7 @@
   // These were on the old site, but why?
   // padding-left: 2.5rem;
   // padding-right: 2.5rem;
-  color: var(--white);
+  color: global-vars.$color-white;
   text-shadow: 0 0 15px #ffffff55;
   width: 100%;
 }
