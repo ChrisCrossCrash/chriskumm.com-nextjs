@@ -1,8 +1,14 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { Hero } from '../components/Hero/Hero'
+import { Portfolio } from '../components/Portfolio/Portfolio'
+import { PortfolioSiteData } from '../types/types'
 
-const Home: NextPage = () => (
+type HomeProps = {
+  projects: PortfolioSiteData[]
+}
+
+const Home: NextPage<HomeProps> = () => (
   <>
     <Head>
       <title>ChrisKumm.com</title>
@@ -11,6 +17,7 @@ const Home: NextPage = () => (
     </Head>
 
     <Hero />
+    <Portfolio />
   </>
 )
 

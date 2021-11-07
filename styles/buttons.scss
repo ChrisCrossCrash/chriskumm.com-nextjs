@@ -1,20 +1,18 @@
 @use 'sass:color';
+@use 'global-vars';
 
-// TODO: Scope `$mango` globally
-$color-mango: #e6520e;
-$color-success: #88c459;
 $btn-transition-time: 200ms;
 $btn-ring-width: 4px;
 
 // Only things that change with `$color` go in these mixins.
 @mixin btn-color($color) {
-  color: var(--white);
+  color: global-vars.$color-white;
   background-color: $color;
 
   &:active,
   &:focus,
   &:hover {
-    background-color: color.scale($color-mango, $lightness: 20%);
+    background-color: color.scale($color, $lightness: 20%);
     box-shadow: 0 0 0 $btn-ring-width $color;
   }
 
@@ -24,15 +22,15 @@ $btn-ring-width: 4px;
 }
 
 @mixin btn-color-outline($color) {
-  color: var(--color-white);
-  // TODO: Try making the background color into a frosted glass material.
+  color: global-vars.$color-white;
+  // IDEA: Try making the background color into a frosted glass material.
   background-color: transparent;
   box-shadow: inset 0 0 0 $btn-ring-width $color;
 
   &:active,
   &:focus,
   &:hover {
-    background-color: color.scale($color-mango, $lightness: 20%);
+    background-color: color.scale($color, $lightness: 20%);
     box-shadow: 0 0 0 $btn-ring-width $color;
   }
 
@@ -70,9 +68,9 @@ $btn-ring-width: 4px;
 }
 
 .btn-mango {
-  @include btn-color($color-mango);
+  @include btn-color(global-vars.$color-mango);
 }
 
 .btn-outline-mango {
-  @include btn-color-outline($color-mango);
+  @include btn-color-outline(global-vars.$color-mango);
 }

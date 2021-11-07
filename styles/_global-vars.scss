@@ -1,0 +1,13 @@
+$color-white: white;
+$color-dark: #091e42;
+$color-mango: #e6520e;
+
+:root {
+  --gutter-size: 1.2rem;
+
+  // Colors
+  --color-white: #{$color-white};
+  --white: #{$color-white};
+  --color-dark: #{$color-dark};
+  --color-mango: #{$color-mango};
+}

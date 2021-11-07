@@ -1,0 +1,12 @@
+.base {
+  width: 100%;
+  max-width: var(--screen-xl);
+  margin: 6rem auto;
+
+  h1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
