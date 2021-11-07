@@ -7,3 +7,12 @@ export type PortfolioSiteData = {
   screenshot: StaticImageData
   url: string
 }
+
+export type SkillData = {
+  title: string
+  skills: string[]
+  image: {
+    src: string
+    alt: string
+  }
+}
