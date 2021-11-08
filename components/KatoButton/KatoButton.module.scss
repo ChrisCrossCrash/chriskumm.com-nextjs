@@ -1,7 +1,6 @@
 .base {
-  $bg: #f3f8fa;
-  $white: #fff;
-  $black: #091e42;
+  $white: var(--white);
+  $black: var(--black);
   @mixin transition(
     $property: all,
     $duration: 0.45s,
@@ -64,8 +63,8 @@
           right: 0.0625rem;
           width: 0.625rem;
           height: 0.625rem;
-          border-top: 0.125rem solid #fff;
-          border-right: 0.125rem solid #fff;
+          border-top: 0.125rem solid $white;
+          border-right: 0.125rem solid $white;
           transform: rotate(45deg);
         }
       }

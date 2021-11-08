@@ -1,7 +1,9 @@
-@use 'global-vars';
+@use 'color-vars';
 
 :root {
   --gutter-size: 1.2rem;
+  --color-dark: #{color-vars.$color-dark};
+  --focus-ring-thickness: 4px;
 }
 
 html {
@@ -11,7 +13,7 @@ html {
 body {
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
-  color: global-vars.$color-dark;
+  color: var(--color-dark);
   line-height: 1.5;
 }
 
@@ -32,4 +34,12 @@ body {
   margin-right: auto;
   margin-left: auto;
   max-width: calc(100vw - var(--gutter-size));
+}
+
+/* Glassmorphism related properties */
+/* Warning: `backdrop-filter: blur()` doesn't work in Firefox with default settings (as of Jan 2021) */
+.glass {
+  backdrop-filter: blur(10px);
+  border: solid 5px transparent;
+  background-clip: padding-box;
 }

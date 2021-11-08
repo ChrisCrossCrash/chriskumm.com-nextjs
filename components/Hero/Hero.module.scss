@@ -1,11 +1,9 @@
-@use '../../styles/global-vars';
-
 .base {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #4a32ff;
+  background-color: var(--violet-900);
   background-size: cover;
 
   // The hero section should be at least as tall as the screen or 550px,
@@ -16,10 +14,9 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  // These were on the old site, but why?
-  // padding-left: 2.5rem;
-  // padding-right: 2.5rem;
-  color: global-vars.$color-white;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  color: var(--white);
   text-shadow: 0 0 15px #ffffff55;
   width: 100%;
 }

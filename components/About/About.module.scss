@@ -1,11 +1,7 @@
-@use '../../styles/global-vars';
-
 .base {
   position: relative;
-  // TODO: Choose a background color here
-  // background-color: global-vars.$color-indigo-900;
-  background-color: #7e27c5;
-  color: global-vars.$color-white;
+  background-color: var(--color-indigo-900);
+  color: var(--white);
   overflow-x: hidden;
   padding-top: 4rem;
   padding-bottom: 10vh;

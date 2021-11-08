@@ -4,7 +4,7 @@ import { SkillData } from '../../types/types'
 import styles from './Skillsection.module.scss'
 
 export const SkillSection = (props: SkillData) => (
-  <div className={styles.base}>
+  <div className={`glass ${styles.base}`}>
     {/* TODO: Ensure that this image load doesn't require an extra round trip. */}
     <Image
       src={props.image.src}
