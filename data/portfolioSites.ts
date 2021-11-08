@@ -35,6 +35,5 @@ export const portfolioSites: PortfolioSiteData[] = [
     technologies:
       'Gatsby, React, GreenSock, SCSS, Django, Nginx, AWS Lightsail, AWS S3, AWS SES, AWS Route 53',
     screenshot: ckMockup,
-    url: 'https://www.chriskumm.com',
   },
 ]

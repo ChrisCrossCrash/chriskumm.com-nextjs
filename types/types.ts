@@ -5,7 +5,7 @@ export type PortfolioSiteData = {
   features: string
   technologies: string
   screenshot: StaticImageData
-  url: string
+  url?: string
 }
 
 export type SkillData = {

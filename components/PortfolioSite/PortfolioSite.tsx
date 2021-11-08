@@ -68,7 +68,9 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
         <p className={styles.technologies}>
           <strong>Key technologies:</strong> {props.project.technologies}
         </p>
-        <KatoButton url={props.project.url}>visit site</KatoButton>
+        {props.project.url && (
+          <KatoButton url={props.project.url}>visit site</KatoButton>
+        )}
       </div>
     </div>
   )
