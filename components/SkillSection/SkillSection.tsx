@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { SkillData } from '../../types/types'
-import styles from './Skillsection.module.scss'
+import styles from './SkillSection.module.scss'
 
 export const SkillSection = (props: SkillData) => (
   <div className={`glass ${styles.base}`}>
