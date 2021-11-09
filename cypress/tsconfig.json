@@ -1,9 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "types": [
-      "cypress"
-      // "@testing-library/cypress"  // Only needed for component testing
-    ]
-  }
+    "types": ["cypress"]
+  },
+  "include": [
+    "../next-env.d.ts",
+    "cypressCustomTypes.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
