@@ -8,7 +8,7 @@
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
 
-const injectNextDevServer = require('@cypress/react/plugins/next')
+// const injectNextDevServer = require('@cypress/react/plugins/next')
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
@@ -20,8 +20,8 @@ const injectNextDevServer = require('@cypress/react/plugins/next')
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-  if (config.testingType === 'component') {
-    injectNextDevServer(on, config)
-  }
+  // if (config.testingType === 'component') {
+  // injectNextDevServer(on, config)
+  // }
   return config
 }

@@ -48,7 +48,11 @@ export const TextInput = React.forwardRef(function TextInputInner(
         {props.label}
       </label>
       {inputElement}
-      {invalid && <div className={styles.explanation}>{meta.error}</div>}
+      {invalid && (
+        <div className={`${styles.explanation} ${styles.invalidText}`}>
+          {meta.error}
+        </div>
+      )}
     </div>
   )
 })

@@ -25,4 +25,17 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // https://github.com/testing-library/cypress-testing-library#usage
-import '@testing-library/cypress/add-commands'
+// import '@testing-library/cypress/add-commands'
+
+Cypress.Commands.add('getInputByLabel', (label: string) => {
+  return cy
+    .contains('label', label)
+    .invoke('attr', 'for')
+    .then((id) => {
+      cy.get('#' + id)
+    })
+})
+
+// Cypress.Commands.add('')
+
+export {}

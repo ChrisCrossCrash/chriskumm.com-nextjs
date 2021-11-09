@@ -6,6 +6,7 @@ import { Spinner } from '../Spinner/Spinner'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import styles from './ContactForm.module.scss'
+import { contactFormSchema } from '../../utils/yupSchemas'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -26,10 +27,12 @@ const handleSubmit = async (
   let data: unknown
 
   try {
-    response = await fetch(`${process.env.DJANGO_URL}/api/submit-inquiry/`, {
+    // TODO: Replace process.env.DJANGO_URL
+    response = await fetch('/api/submit-inquiry/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
       body: JSON.stringify(values),
     })
@@ -82,16 +85,7 @@ export const ContactForm = () => {
         email: '',
         message: '',
       }}
-      validationSchema={Yup.object({
-        // Don't forget to match these restrictions in the back end!
-        name: Yup.string()
-          .max(50, 'Must be 50 characters or less')
-          .required('Required'),
-        email: Yup.string().email('Invalid email address').required('Required'),
-        message: Yup.string()
-          .required('Required')
-          .max(5000, 'must be 5000 characters or less'),
-      })}
+      validationSchema={contactFormSchema}
       onSubmit={(values) => handleSubmit(values, setSuccess)}
     >
       {/* TODO: Get rid of this `any` */}
@@ -101,7 +95,7 @@ export const ContactForm = () => {
         if (isSubmitting) {
           buttonText = <Spinner className={styles.spinner} />
         } else {
-          buttonText = success ? 'Thanks!' : 'Submit'
+          buttonText = success ? 'Thanks!' : 'Send Message'
         }
 
         return (
