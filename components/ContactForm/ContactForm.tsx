@@ -126,7 +126,7 @@ export const ContactForm = () => {
 
             <button
               ref={submitRef}
-              className={`btn btn-gray ${success ? 'submit-btn-success' : ''}`}
+              className={`btn btn-gray ${success ? 'btn-success' : ''}`}
               type='submit'
               disabled={isSubmitting || success}
               style={{ minWidth: '10ch' }}
