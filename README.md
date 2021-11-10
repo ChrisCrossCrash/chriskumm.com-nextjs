@@ -2,7 +2,19 @@
 
 My personal portfolio.
 
-### Known Issues
+## TODO
+
+- [ ] Improve lighthouse score
+- [ ] Custom favicon
+- [ ] Captcha for contact form
+- [ ] Fine-tune layout (especially margins around text)
+- [ ] Get InstaArt working again
+- [ ] Update page data (skills, portfolio technologies)
+- [ ] Improve error handling (don't use `alert`)
+- [ ] Configure so that ESLint and Prettier are run pre-commit
+- [ ] Look into [caching](https://nextjs.org/docs/going-to-production#caching)
+
+## Known Issues
 
 - This error only happens sometimes when you try to debug in VSCode:
   ```
