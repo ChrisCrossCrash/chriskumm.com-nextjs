@@ -56,9 +56,18 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
       {/* Info Text */}
       <div ref={textRef} className={styles.infoText}>
         <h1>
-          <a className={styles.title} href={props.project.url} rel='noreferrer'>
-            {props.project.title}
-          </a>
+          {/* If there's a URL for the project, render a link. Otherwise, render a string. */}
+          {props.project.url ? (
+            <a
+              className={styles.title}
+              href={props.project.url}
+              rel='noreferrer'
+            >
+              {props.project.title}
+            </a>
+          ) : (
+            props.project.title
+          )}
         </h1>
         <p className={styles.subtitle}>{props.project.subtitle}</p>
         <p className={styles.description}>{props.project.description}</p>
