@@ -11,7 +11,7 @@ My personal portfolio.
 - [ ] Get InstaArt working again
 - [ ] Update page data (skills, portfolio technologies)
 - [ ] Improve error handling (don't use `alert`)
-- [ ] Configure so that ESLint and Prettier are run pre-commit
+- [x] Configure so that ESLint and Prettier are run pre-commit
 - [ ] Look into [caching](https://nextjs.org/docs/going-to-production#caching)
 
 ## Known Issues
