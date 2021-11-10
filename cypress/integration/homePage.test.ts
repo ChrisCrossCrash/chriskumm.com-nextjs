@@ -1,5 +1,5 @@
 describe('Contact Form', () => {
-  it.only('submits the form and shows successful status', function () {
+  it('submits the form and shows successful status', function () {
     cy.intercept(
       // The request to intercept (RouteMatcher)
       {
@@ -68,6 +68,7 @@ describe('/api/submit-inquiry', () => {
       name: 'Chris',
       email: 'ck@aol.com',
       message: 'Hello World',
+      recaptchaToken: 'test',
     }).then((response) => {
       expect(response.status).to.eq(201)
     })
@@ -92,6 +93,7 @@ describe('/api/submit-inquiry', () => {
           name: '', // empty name
           email: 'ck@aol.com',
           message: 'Hello World',
+          recaptchaToken: 'test',
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
@@ -107,6 +109,7 @@ describe('/api/submit-inquiry', () => {
           name: 'a'.repeat(51),
           email: 'ck@aol.com',
           message: 'Hello World',
+          recaptchaToken: 'test',
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
@@ -124,6 +127,7 @@ describe('/api/submit-inquiry', () => {
           name: 'Chris',
           email: '', // empty email
           message: 'Hello World',
+          recaptchaToken: 'test',
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
@@ -139,6 +143,7 @@ describe('/api/submit-inquiry', () => {
           name: 'Chris',
           email: 'ck@aol', // invalid email
           message: 'Hello World',
+          recaptchaToken: 'test',
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
@@ -156,6 +161,7 @@ describe('/api/submit-inquiry', () => {
           name: 'Chris',
           email: 'ck@aol.com',
           message: '', // empty message
+          recaptchaToken: 'test',
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
@@ -171,6 +177,7 @@ describe('/api/submit-inquiry', () => {
           name: 'Chris',
           email: 'ck@aol.com',
           message: 'a'.repeat(5001), // message longer than 5000 characters
+          recaptchaToken: 'test',
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
