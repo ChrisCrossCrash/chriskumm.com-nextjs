@@ -1,5 +1,5 @@
 describe('Contact Form', () => {
-  it('submits the form and shows successful status', function () {
+  it.only('submits the form and shows successful status', function () {
     cy.intercept(
       // The request to intercept (RouteMatcher)
       {

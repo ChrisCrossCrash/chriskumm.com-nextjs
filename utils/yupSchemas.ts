@@ -10,4 +10,5 @@ export const contactFormSchema = Yup.object({
   message: Yup.string()
     .required('Required')
     .max(5000, 'must be 5000 characters or less'),
+  recaptchaToken: Yup.string(),
 })

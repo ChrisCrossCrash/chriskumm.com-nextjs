@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
 import { TextInput } from '../TextInput/TextInput'
 import { Spinner } from '../Spinner/Spinner'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import styles from './ContactForm.module.scss'
 import { contactFormSchema } from '../../utils/yupSchemas'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,7 +18,8 @@ type SubmittedValues = {
 
 const handleSubmit = async (
   values: SubmittedValues,
-  setSuccess: React.Dispatch<React.SetStateAction<boolean>>
+  setSuccess: React.Dispatch<React.SetStateAction<boolean>>,
+  recaptchaRef: React.RefObject<ReCAPTCHA>
 ) => {
   // What happens during form submission with Formik?:
   // https://formik.org/docs/guides/form-submission
@@ -26,15 +27,32 @@ const handleSubmit = async (
   let response: Response | null
   let data: unknown
 
+  recaptchaRef.current?.render()
+
+  // Make a fake recaptchaToken in development. This is safe because the verification
+  // on the `/api/submit-inquiry` endpoint is only done in production.
+  let recaptchaToken
+  if (process.env.NODE_ENV === 'development') {
+    recaptchaToken = 'testRecaptchaToken'
+  } else {
+    recaptchaToken = await recaptchaRef.current?.executeAsync()
+  }
+
+  if (typeof recaptchaToken !== 'string') {
+    throw new Error('Recaptcha token is not a string')
+  }
+
   try {
-    // TODO: Replace process.env.DJANGO_URL
     response = await fetch('/api/submit-inquiry/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify(values),
+      body: JSON.stringify({
+        ...values,
+        recaptchaToken,
+      }),
     })
     data = await response.json()
     // TODO: get rid of this `any`
@@ -64,6 +82,15 @@ export const ContactForm = () => {
   const emailRef = useRef<HTMLDivElement>(null)
   const messageRef = useRef<HTMLDivElement>(null)
   const submitRef = useRef<HTMLButtonElement>(null)
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
+
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
+  if (!recaptchaSiteKey) {
+    throw new Error(
+      'NEXT_PUBLIC_RECAPTCHA_SITE_KEY could not be loaded from environmental variables.'
+    )
+  }
 
   useEffect(() => {
     const stagger = 0.2
@@ -86,9 +113,8 @@ export const ContactForm = () => {
         message: '',
       }}
       validationSchema={contactFormSchema}
-      onSubmit={(values) => handleSubmit(values, setSuccess)}
+      onSubmit={(values) => handleSubmit(values, setSuccess, recaptchaRef)}
     >
-      {/* TODO: Get rid of this `any` */}
       {({ isSubmitting }: { isSubmitting: boolean }) => {
         let buttonText
 
@@ -133,6 +159,17 @@ export const ContactForm = () => {
             >
               {buttonText}
             </button>
+
+            {/* Don't render the ReCAPTCHA element in development. This is safe because the
+             verification on the `/api/submit-inquiry` endpoint is only done in production. */}
+            {process.env.NODE_ENV !== 'development' && (
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                size='invisible'
+                sitekey={recaptchaSiteKey}
+              />
+            )}
+
             {success && (
               <div className={styles.successMessage}>
                 Thanks for contacting me! I&apos;ll get back to you as soon as
