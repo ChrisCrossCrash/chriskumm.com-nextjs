@@ -18,7 +18,21 @@ const submitQuery = async (
 
   const { name, email, message }: { [key: string]: string } = request.body
 
-  const telegramResponse = await sendMessage(name, email, message)
+  const token = process.env.TELEGRAM_TOKEN
+  const chatId = process.env.TELEGRAM_CHAT_ID
+
+  if (!token || !chatId) {
+    // You didn't set enviroment variables for Telegram API.
+    return response.status(500).end()
+  }
+
+  const telegramResponse = await sendMessage(
+    name,
+    email,
+    message,
+    token,
+    chatId
+  )
 
   if (telegramResponse.ok) {
     return response.status(201).json({ status: 'ok' })
