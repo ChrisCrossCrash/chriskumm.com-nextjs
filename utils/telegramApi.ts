@@ -1,16 +1,12 @@
 // https://core.telegram.org/bots/api#sendmessage
-
-/** Send a contact form message, given the Telegram token and chat ID. */
 export const sendMessage = async (
   name: string,
   email: string,
-  message: string,
-  token: string,
-  chatId: string | number
+  message: string
 ): Promise<Response> => {
-  const url = `https://api.telegram.org/bot${token}/sendMessage`
+  const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`
   const body = {
-    chat_id: { chatId },
+    chat_id: process.env.TELEGRAM_CHAT_ID,
     text: `${name}\n${email}\n${message}`,
   }
 
