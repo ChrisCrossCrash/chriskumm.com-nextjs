@@ -6,7 +6,7 @@ My personal portfolio.
 
 - [ ] Improve lighthouse score
 - [ ] Custom favicon
-- [ ] Captcha for contact form
+- [x] Captcha for contact form
 - [ ] Fine-tune layout (especially margins around text)
 - [ ] Get InstaArt working again
 - [ ] Update page data (skills, portfolio technologies)
