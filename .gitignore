@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/cypress/videos
+/cypress/screenshots
+/cypress/downloads
 
 # next.js
 /.next/
@@ -36,7 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# Cypress
-/cypress/videos
-/cypress/screenshots
-/cypress/downloads
+# ESLint
+.eslintcache
