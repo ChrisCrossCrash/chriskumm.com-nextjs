@@ -38,7 +38,7 @@
     "typescript-plugin-css-modules": "^3.4.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js}": "eslint --cache",
+    "*.{js,jsx,ts,tsx,md,html,css,scss}": "prettier --write"
   }
 }
