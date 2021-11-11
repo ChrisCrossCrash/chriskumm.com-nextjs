@@ -1,4 +1,9 @@
-// https://core.telegram.org/bots/api#sendmessage
+/**
+ * Send a Telegram message. Requires `TELEGRAM_TOKEN` and
+ * `TELEGRAM_CHAT_ID` environment variables to be set.
+ *
+ * https://core.telegram.org/bots/api#sendmessage
+ */
 export const sendMessage = async (
   name: string,
   email: string,

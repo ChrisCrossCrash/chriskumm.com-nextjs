@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import { SkillData } from '../../types/types'
 import styles from './SkillSection.module.scss'

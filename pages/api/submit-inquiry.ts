@@ -10,7 +10,7 @@ type errorCode =
   | 'bad-request'
   | 'timeout-or-duplicate'
 
-// https://developers.google.com/recaptcha/docs/verify
+/** https://developers.google.com/recaptcha/docs/verify */
 type CaptchaValidation = {
   success: boolean
   // timestamp of the challenge load (ISO format yyyy-MM-dd'T'HH:mm:ssZZ)
@@ -19,7 +19,14 @@ type CaptchaValidation = {
   hostname: string
   'error-codes'?: errorCode[]
 }
-
+/**
+ * Verify the client-provided recaptcha token with Google's recaptcha verify API
+ *
+ * https://developers.google.com/recaptcha/docs/verify#api_request
+ *
+ * @param {string} token - The user response token provided by the reCAPTCHA client-side integration on your site
+ * @returns {Promise<CaptchaValidation>} - A promise that resolves to a CaptchaValidation object
+ */
 const verifyToken = async (token: string): Promise<CaptchaValidation> => {
   const captchResponse = await fetch(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
@@ -30,10 +37,10 @@ const verifyToken = async (token: string): Promise<CaptchaValidation> => {
       method: 'POST',
     }
   )
-  const captchaValidation: Promise<CaptchaValidation> = captchResponse.json()
-  return captchaValidation
+  return captchResponse.json()
 }
 
+/** An API endpoint that receives messages from the contact form. */
 const submitQuery = async (
   request: NextApiRequest,
   response: NextApiResponse
