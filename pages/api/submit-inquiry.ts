@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { contactFormSchema } from '../../utils/yupSchemas'
 import { sendMessage } from '../../utils/telegramApi'
-import { ApiObject } from '../../types/types'
 
 type errorCode =
   | 'missing-input-secret'
@@ -43,7 +42,7 @@ const verifyToken = async (token: string): Promise<CaptchaValidation> => {
 /** An API endpoint that receives messages from the contact form. */
 const submitQuery = async (
   request: NextApiRequest,
-  response: NextApiResponse<ApiObject>
+  response: NextApiResponse
 ) => {
   if (!(request.method === 'POST')) {
     return response.status(405).json({ message: 'Method not allowed' })

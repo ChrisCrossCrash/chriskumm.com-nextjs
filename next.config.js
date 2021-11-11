@@ -12,6 +12,6 @@ module.exports = {
   typescript: {
     // Stupidly, the build process needs to access the types for cypress to compile.
     // Maybe there's a way to just ignore this directory when the project is built?
-    tsconfigPath: './cypress/tsconfig.json',
+    tsconfigPath: './tsconfig.build.json',
   },
 }
