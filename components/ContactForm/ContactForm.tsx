@@ -25,7 +25,6 @@ const handleSubmit = async (
   // https://formik.org/docs/guides/form-submission
 
   let response: Response | null
-  let data: any
 
   recaptchaRef.current?.render()
 
@@ -54,7 +53,6 @@ const handleSubmit = async (
         recaptchaToken,
       }),
     })
-    data = await response.json()
   } catch (error) {
     // TODO: Handle this error better
     //  https://fettblog.eu/typescript-typing-catch-clauses/#2.-there-is-only-one-catch-clause-in-javascript
@@ -70,6 +68,8 @@ const handleSubmit = async (
     setSuccess(true)
     return
   }
+
+  let data = await response.json()
 
   if (data.message) {
     alert(`Something went wrong: ${data.message}`)
