@@ -12,7 +12,7 @@ My personal portfolio.
 - [ ] Update page data (skills, portfolio technologies)
 - [ ] Improve error handling (don't use `alert`)
 - [x] Configure so that ESLint and Prettier are run pre-commit
-- [ ] Look into [caching](https://nextjs.org/docs/going-to-production#caching)
+- [x] Look into [caching](https://nextjs.org/docs/going-to-production#caching)
 - [ ] GDPR compliance - these might be helpful:
   - [React Cookie Consent](https://www.npmjs.com/package/react-cookie-consent)
   - [YouTube: Is Your Website GDPR Ready? Follow this 7-step Checklist](https://www.youtube.com/watch?v=OrLJ1rj8ZTY)

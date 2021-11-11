@@ -20,6 +20,7 @@ describe('/api/submit-inquiry', () => {
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(405)
+      expect(response.body.message).to.eq('Method not allowed')
     })
   })
 
@@ -37,6 +38,7 @@ describe('/api/submit-inquiry', () => {
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
+        expect(response.body.message).to.eq('Bad request: Invalid form data')
       })
     })
 
@@ -53,6 +55,7 @@ describe('/api/submit-inquiry', () => {
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
+        expect(response.body.message).to.eq('Bad request: Invalid form data')
       })
     })
   })
@@ -71,6 +74,7 @@ describe('/api/submit-inquiry', () => {
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
+        expect(response.body.message).to.eq('Bad request: Invalid form data')
       })
     })
 
@@ -87,6 +91,7 @@ describe('/api/submit-inquiry', () => {
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
+        expect(response.body.message).to.eq('Bad request: Invalid form data')
       })
     })
   })
@@ -105,6 +110,7 @@ describe('/api/submit-inquiry', () => {
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
+        expect(response.body.message).to.eq('Bad request: Invalid form data')
       })
     })
 
@@ -121,6 +127,7 @@ describe('/api/submit-inquiry', () => {
         },
       }).then((response) => {
         expect(response.status).to.eq(400)
+        expect(response.body.message).to.eq('Bad request: Invalid form data')
       })
     })
   })

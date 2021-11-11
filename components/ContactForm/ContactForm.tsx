@@ -4,9 +4,9 @@ import { TextInput } from '../TextInput/TextInput'
 import { Spinner } from '../Spinner/Spinner'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import ReCAPTCHA from 'react-google-recaptcha'
 import styles from './ContactForm.module.scss'
 import { contactFormSchema } from '../../utils/yupSchemas'
-import ReCAPTCHA from 'react-google-recaptcha'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -25,13 +25,13 @@ const handleSubmit = async (
   // https://formik.org/docs/guides/form-submission
 
   let response: Response | null
-  let data: unknown
+  let data: any
 
   recaptchaRef.current?.render()
 
   // Make a fake recaptchaToken in development. This is safe because the verification
   // on the `/api/submit-inquiry` endpoint is only done in production.
-  let recaptchaToken
+  let recaptchaToken: string | null | undefined
   if (process.env.NODE_ENV === 'development') {
     recaptchaToken = 'testRecaptchaToken'
   } else {
@@ -55,23 +55,26 @@ const handleSubmit = async (
       }),
     })
     data = await response.json()
-    // TODO: get rid of this `any`
-  } catch (error: any) {
+  } catch (error) {
     // TODO: Handle this error better
     //  https://fettblog.eu/typescript-typing-catch-clauses/#2.-there-is-only-one-catch-clause-in-javascript
-    alert(`Something went wrong:\n\n${error.name}: ${error.message}`)
+    if (error instanceof Error) {
+      alert(`Something went wrong:\n\n${error.name}: ${error.message}`)
+    } else {
+      alert(`Something went wrong.`)
+    }
     return
   }
 
   if (response.status === 201) {
     setSuccess(true)
-  } else {
-    alert(
-      `Something went wrong (response code: ${response.status}):
-          \n\nsent data:\n${JSON.stringify(values, null, 2)}
-          \n\nserver response:\n${JSON.stringify(data, null, 2)}`
-    )
     return
+  }
+
+  if (data.message) {
+    alert(`Something went wrong: ${data.message}`)
+  } else {
+    alert('Something went wrong')
   }
 }
 

@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { contactFormSchema } from '../../utils/yupSchemas'
 import { sendMessage } from '../../utils/telegramApi'
+import { ApiObject } from '../../types/types'
 
 type errorCode =
   | 'missing-input-secret'
@@ -10,22 +11,21 @@ type errorCode =
   | 'bad-request'
   | 'timeout-or-duplicate'
 
-/** https://developers.google.com/recaptcha/docs/verify */
+/** A response object from the reCAPTCHA API. */
 type CaptchaValidation = {
+  /** Whether the reCAPTCHA token was successfully verified */
   success: boolean
-  // timestamp of the challenge load (ISO format yyyy-MM-dd'T'HH:mm:ssZZ)
+  /** The timestamp of the challenge load (ISO format yyyy-MM-dd'T'HH:mm:ssZZ) */
   challenge_ts: string
-  // the hostname of the site where the reCAPTCHA was solved
+  /** The hostname of the site where the reCAPTCHA was solved */
   hostname: string
+  /** An array of error codes that describe the reasons for the failure */
   'error-codes'?: errorCode[]
 }
 /**
  * Verify the client-provided recaptcha token with Google's recaptcha verify API
  *
  * https://developers.google.com/recaptcha/docs/verify#api_request
- *
- * @param {string} token - The user response token provided by the reCAPTCHA client-side integration on your site
- * @returns {Promise<CaptchaValidation>} - A promise that resolves to a CaptchaValidation object
  */
 const verifyToken = async (token: string): Promise<CaptchaValidation> => {
   const captchResponse = await fetch(
@@ -43,10 +43,10 @@ const verifyToken = async (token: string): Promise<CaptchaValidation> => {
 /** An API endpoint that receives messages from the contact form. */
 const submitQuery = async (
   request: NextApiRequest,
-  response: NextApiResponse
+  response: NextApiResponse<ApiObject>
 ) => {
   if (!(request.method === 'POST')) {
-    return response.status(405).end()
+    return response.status(405).json({ message: 'Method not allowed' })
   }
 
   // Any validation errors should be handled in the front end.
@@ -55,7 +55,9 @@ const submitQuery = async (
     !(await contactFormSchema.isValid(request.body)) ||
     !request.body.recaptchaToken
   ) {
-    return response.status(400).end()
+    return response
+      .status(400)
+      .json({ message: 'Bad request: Invalid form data' })
   }
 
   const { name, email, message, recaptchaToken }: { [key: string]: string } =
@@ -79,19 +81,24 @@ const submitQuery = async (
     }
 
     if (!verification.success) {
-      return response.status(400).end()
+      return response
+        .status(400)
+        .json({ message: 'Bad request: reCAPTCHA token failed verification.' })
     }
   } catch (error) {
     console.log(error)
-    return response.status(500).end()
+    return response.status(500).json({ message: 'Internal server error' })
   }
 
   const telegramResponse = await sendMessage(name, email, message)
 
   if (telegramResponse.ok) {
-    return response.status(201).json({ status: 'ok' })
+    return response.status(201).end()
   } else {
-    return response.status(500).end()
+    return response.status(500).json({
+      message:
+        'Internal server error: Failed to send message via Telegram API.',
+    })
   }
 }
 

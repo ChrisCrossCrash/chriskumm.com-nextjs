@@ -9,6 +9,14 @@ export const sendMessage = async (
   email: string,
   message: string
 ): Promise<Response> => {
+  if (!process.env.TELEGRAM_TOKEN) {
+    throw new Error('TELEGRAM_TOKEN environment variable is undefined')
+  }
+
+  if (!process.env.TELEGRAM_CHAT_ID) {
+    throw new Error('TELEGRAM_CHAT_ID environment variable is undefined')
+  }
+
   const url = `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`
   const body = {
     chat_id: process.env.TELEGRAM_CHAT_ID,
