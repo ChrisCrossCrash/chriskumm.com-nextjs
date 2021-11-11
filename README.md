@@ -4,7 +4,7 @@ My personal portfolio.
 
 ## TODO
 
-- [ ] Improve lighthouse score
+- [x] Improve lighthouse score
 - [ ] Custom favicon
 - [x] Captcha for contact form
 - [ ] Fine-tune layout (especially margins around text)
