@@ -15,8 +15,13 @@ export const frontEnd: SkillData = {
 }
 
 export const backEnd: SkillData = {
-  title: 'Back End',
-  skills: ['Django | REST | VPS', 'Ubuntu | uWSGI | NGINX', 'AWS | Stripe'],
+  title: 'Back End / APIs',
+  skills: [
+    'Django | REST | VPS',
+    'Ubuntu | uWSGI | NGINX',
+    'AWS | Stripe',
+    'Telegram API',
+  ],
   image: {
     src: '/images/iconfinder_machines_2955248.svg',
     alt: 'back End',
