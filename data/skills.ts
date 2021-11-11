@@ -15,7 +15,7 @@ export const frontEnd: SkillData = {
 }
 
 export const backEnd: SkillData = {
-  title: 'Back End / APIs',
+  title: 'Back End / API',
   skills: [
     'Django | REST | VPS',
     'Ubuntu | uWSGI | NGINX',
