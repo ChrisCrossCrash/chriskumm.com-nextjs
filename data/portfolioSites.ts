@@ -24,7 +24,7 @@ export const portfolioSites: PortfolioSiteData[] = [
     technologies:
       'React, React Router, React Bootstrap, Django REST Framework, Nginx, AWS Lightsail',
     screenshot: instaArtMockup,
-    url: 'https://www.chriskumm.com/art',
+    url: 'https://insta-art-frontend.vercel.app',
   },
   {
     title: 'ChrisKumm.com',
