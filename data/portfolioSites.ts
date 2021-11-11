@@ -30,10 +30,9 @@ export const portfolioSites: PortfolioSiteData[] = [
     title: 'ChrisKumm.com',
     subtitle: 'Portfolio website',
     description: 'This is where I showcase my work.',
-    features:
-      'Progressive web app, CSS animations, GreenSock animations, parallax background',
+    features: 'Animations, custom Telegram API, reCAPTCHA, Optimized images',
     technologies:
-      'Gatsby, React, GreenSock, SCSS, Django, Nginx, AWS Lightsail, AWS S3, AWS SES, AWS Route 53',
+      'Typescript (strict), Next JS, GreenSock, SCSS modules, Cypress, Vercel, AWS Route 53, Formik',
     screenshot: ckMockup,
   },
 ]
