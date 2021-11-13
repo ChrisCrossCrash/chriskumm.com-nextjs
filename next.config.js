@@ -10,8 +10,7 @@ module.exports = {
   // but the point of this site is to showcase my code.
   productionBrowserSourceMaps: true,
   typescript: {
-    // Stupidly, the build process needs to access the types for cypress to compile.
-    // Maybe there's a way to just ignore this directory when the project is built?
+    // The build process has its own tsconfig.json, which ignores the cypress directory.
     tsconfigPath: './tsconfig.build.json',
   },
 }

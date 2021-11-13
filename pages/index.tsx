@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from 'next'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Hero } from '../components/Hero/Hero'
 import { Portfolio } from '../components/Portfolio/Portfolio'
