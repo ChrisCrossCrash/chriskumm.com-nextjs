@@ -10,6 +10,8 @@ export const SkillSection = (props: SkillData) => (
       alt={props.image.alt}
       width={400}
       height={400}
+      // Start loading when the bottom of the viewport is within 500px of the image.
+      lazyBoundary='500px'
     />
     <h1 className={styles.heading}>{props.title}</h1>
     <div className={styles.body}>

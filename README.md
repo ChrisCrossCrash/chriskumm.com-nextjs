@@ -12,7 +12,6 @@ My personal portfolio.
   - Custom favicon
   - Fine-tune layout (especially margins around text)
   - GitHub links for portfolio sites
-  - Make SVGs load inline
   - Footer component
 - 🔴 Low impact, high effort
   - Improve error handling (don't use `alert`)

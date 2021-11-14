@@ -47,6 +47,8 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
           alt={props.project.title}
           className={styles.screenshot}
           placeholder='blur'
+          // Start loading when the bottom of the viewport is within 500px of the image.
+          lazyBoundary='500px'
         />
       </div>
 
