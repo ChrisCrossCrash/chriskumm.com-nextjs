@@ -22,8 +22,9 @@ export const portfolioSites: PortfolioSiteData[] = [
     description: 'An online art museum.',
     features: 'admin page, dynamic background, pagination, full-screen modals',
     technologies:
-      'React, React Router, React Bootstrap, Django REST Framework, Nginx, AWS Lightsail',
+      'Next JS, TypeScript (strict), SCSS, Greensock, React Bootstrap, Django REST Framework, Nginx, AWS Lightsail',
     screenshot: instaArtMockup,
+    // Don't forget to also change the redirect in next.config.js if this changes.
     url: 'https://insta-art-frontend.vercel.app',
   },
   {
@@ -32,7 +33,7 @@ export const portfolioSites: PortfolioSiteData[] = [
     description: 'This is where I showcase my work.',
     features: 'Animations, custom Telegram API, reCAPTCHA, Optimized images',
     technologies:
-      'Typescript (strict), Next JS, GreenSock, SCSS modules, Cypress, Vercel, AWS Route 53, Formik',
+      'TypeScript (strict), Next JS, GreenSock, SCSS modules, Cypress, Vercel, AWS Route 53, Formik',
     screenshot: ckMockup,
   },
 ]
