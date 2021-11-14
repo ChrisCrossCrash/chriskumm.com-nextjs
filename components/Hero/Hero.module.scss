@@ -19,6 +19,10 @@
   color: var(--white);
   text-shadow: 0 0 15px #ffffff55;
   width: 100%;
+
+  * {
+    margin-top: 0;
+  }
 }
 
 .headingSmall {
@@ -33,14 +37,12 @@
   font-weight: 900;
   text-transform: uppercase;
   font-family: metropolis, sans-serif;
-}
-
-.buttonRow {
-  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .ctaBtn {
   margin-right: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 // You can't use css custom properties in media queries.

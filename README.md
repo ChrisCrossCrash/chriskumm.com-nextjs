@@ -10,7 +10,6 @@ My personal portfolio.
   - GDPR compliance
 - 🟡 Low impact, low effort
   - Custom favicon
-  - Fine-tune layout (especially margins around text)
   - GitHub links for portfolio sites
   - Footer component
 - 🔴 Low impact, high effort

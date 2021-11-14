@@ -14,7 +14,7 @@ export const Hero = () => (
       </div>
 
       {/* Button Row */}
-      <div className={styles.buttonRow}>
+      <div>
         <a className={`btn btn-mango ${styles.ctaBtn}`} href='#portfolio'>
           Portfolio
         </a>
