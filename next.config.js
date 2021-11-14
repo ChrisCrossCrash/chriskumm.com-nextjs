@@ -13,4 +13,15 @@ module.exports = {
     // The build process has its own tsconfig.json, which ignores the cypress directory.
     tsconfigPath: './tsconfig.build.json',
   },
+
+  // https://nextjs.org/docs/api-reference/next.config.js/redirects
+  async redirects() {
+    return [
+      {
+        source: '/art',
+        destination: 'https://insta-art-frontend.vercel.app/',
+        permanent: false,
+      },
+    ]
+  },
 }
