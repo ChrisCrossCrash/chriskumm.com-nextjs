@@ -22,6 +22,11 @@ module.exports = {
         destination: 'https://insta-art-frontend.vercel.app/',
         permanent: false,
       },
+      {
+        source: '/shopping',
+        destination: 'https://simple-shopping-list-three.vercel.app/',
+        permanent: false,
+      },
     ]
   },
 }
