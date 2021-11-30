@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         source: '/shopping',
-        destination: 'https://simple-shopping-list-three.vercel.app/',
+        destination: 'https://ck-shopping.vercel.app/',
         permanent: false,
       },
     ]
