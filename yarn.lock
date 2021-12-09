@@ -127,6 +127,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/metropolis/-/metropolis-4.5.0.tgz#69f4fc76a6c8fb6b6d1feb0f927e353505dc371f"
   integrity sha512-y0xYEftAq22M+zkS8AWIjrSHP8ZdtSy3D0DUJKIzbVleqvQ8O1YUZiYGjYvJewy5f9aycnAhT4koMv7r9T8Jkw==
 
+"@fontsource/orbitron@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/orbitron/-/orbitron-4.5.1.tgz#11df5651bcfc516aeb70d9b8472bbfcefb4f97ba"
+  integrity sha512-zYalrxIj3AzzvzUmtw71tOno3isNxGqvqihRyVBSAAE5+c8ggG0uNfLWG5PYqf1QrsztHXjQsXkpCDjxRrzR6w==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"

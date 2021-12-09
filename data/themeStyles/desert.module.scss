@@ -1,0 +1,25 @@
+@use '../../styles/buttons.scss';
+@use '../../styles/color-vars';
+
+$primary: color-vars.$blue-900;
+$textColor: color-vars.$blue-900;
+
+$bodyFont: inter;
+
+.app {
+  // font-family: orbitron;
+  font-family: $bodyFont, system-ui, -apple-system, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    sans-serif;
+  color: $textColor;
+}
+
+.btn {
+  @include buttons.btn-color($primary);
+}
+
+.btnOutline {
+  @include buttons.btn-color-outline($primary);
+}
+
+// TODO: Highlight colors, link colors, Kato Button colors

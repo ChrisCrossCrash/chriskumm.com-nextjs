@@ -67,14 +67,6 @@ $btn-ring-width: var(--focus-ring-thickness);
   }
 }
 
-.btn-mango {
-  @include btn-color(color-vars.$mango);
-}
-
-.btn-outline-mango {
-  @include btn-color-outline(color-vars.$mango);
-}
-
 .btn-gray {
   @include btn-color(color-vars.$slate-600);
 }

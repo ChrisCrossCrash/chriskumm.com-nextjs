@@ -16,3 +16,13 @@ export type SkillData = {
     alt: string
   }
 }
+
+export type Theme = {
+  name: string
+  heroSectionBackground: StaticImageData
+  cssModule: {
+    app: string
+    btn: string
+    btnOutline: string
+  }
+}
