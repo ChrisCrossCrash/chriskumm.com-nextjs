@@ -8,6 +8,11 @@
 
 html {
   scroll-behavior: smooth;
+
+  // Some of the animated elements have a starting position that
+  // puts them outside of the normal page width.
+  // Prevent these elements from making the page wider than the screen size.
+  overflow-x: hidden;
 }
 
 body {
