@@ -66,9 +66,7 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
             href={props.project.url}
             rel='noreferrer'
           >
-            <h1 className={`${styles.title} ${theme.cssModule.textColor}`}>
-              {props.project.title}
-            </h1>
+            <h1 className={styles.title}>{props.project.title}</h1>
           </a>
         ) : (
           <h1 className={styles.title}>{props.project.title}</h1>
