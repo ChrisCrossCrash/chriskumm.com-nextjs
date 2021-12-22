@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { PortfolioSiteData } from '../../types/types'
 import styles from './PortfolioSite.module.scss'
+import { useTheme } from '../../contexts/ThemeContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,6 +16,7 @@ type PortfolioSiteProps = {
 export const PortfolioSite = (props: PortfolioSiteProps) => {
   const textRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
+  const theme = useTheme()
 
   useEffect(() => {
     const textIsOnRightHalf =
@@ -64,7 +66,9 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
             href={props.project.url}
             rel='noreferrer'
           >
-            <h1 className={styles.title}>{props.project.title}</h1>
+            <h1 className={`${styles.title} ${theme.cssModule.textColor}`}>
+              {props.project.title}
+            </h1>
           </a>
         ) : (
           <h1 className={styles.title}>{props.project.title}</h1>

@@ -7,6 +7,18 @@ const SetThemeContext = createContext<
   React.Dispatch<React.SetStateAction<Theme>>
 >(null!)
 
+/*
+
+Rules/Guidelines for This Context:
+
+1. Whenever possible, you should favor CSS custom properties over calling useTheme.
+   This will help performance and keep code simpler and easier to maintain.
+2. Themes are here to stay, so there should be no need to have default values that are overridden.
+   Again, this will keep code simpler and easier to maintain.
+*/
+
+// TODO: Go through every place where useTheme is called and see if it could be
+//  changed over to use CSS custom properties.
 export const useTheme = () => useContext(ThemeContext)
 
 export const useSetTheme = () => useContext(SetThemeContext)

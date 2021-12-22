@@ -2,7 +2,8 @@
 @use '../../styles/color-vars';
 
 $primary: color-vars.$blue-900;
-$textColor: color-vars.$blue-900;
+// $textColor: color-vars.$blue-900;
+$textColor: green;
 
 $bodyFont: inter;
 
@@ -11,6 +12,13 @@ $bodyFont: inter;
   font-family: $bodyFont, system-ui, -apple-system, 'Segoe UI', Roboto,
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     sans-serif;
+  // color: $textColor;
+  color: $textColor;
+  --primary: #{$primary};
+  --text-color: #{$textColor};
+}
+
+.textColor {
   color: $textColor;
 }
 
@@ -22,4 +30,4 @@ $bodyFont: inter;
   @include buttons.btn-color-outline($primary);
 }
 
-// TODO: Highlight colors, link colors, Kato Button colors
+// TODO: Highlight colors, link colors, background colors

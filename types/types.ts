@@ -24,5 +24,6 @@ export type Theme = {
     app: string
     btn: string
     btnOutline: string
+    textColor: string
   }
 }

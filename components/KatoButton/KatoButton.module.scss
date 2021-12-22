@@ -1,6 +1,7 @@
 .base {
+  // It would be really nice to change these css variables dynamically
   $white: var(--white);
-  $black: var(--black);
+  $black: var(--text-color);
   @mixin transition(
     $property: all,
     $duration: 0.45s,
