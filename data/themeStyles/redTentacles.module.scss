@@ -1,12 +1,12 @@
 @use '../../styles/buttons.scss';
 @use '../../styles/color-vars';
 
-$primary: #5d1c99;
-$textColor: #231c29;
+$primary: rgb(211, 48, 61);
+$textColor: #1f1f1f;
 $heroFont: metropolis;
 $bodyFont: inter;
-$selectionColor: #f0f0f0;
-$selectionBg: #5d1c99;
+$selectionColor: #ffffff;
+$selectionBg: rgb(138, 32, 32);
 
 .app {
   // font-family: orbitron;

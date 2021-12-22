@@ -4,7 +4,7 @@ import { Hero } from '../components/Hero/Hero'
 import { Portfolio } from '../components/Portfolio/Portfolio'
 import { About } from '../components/About/About'
 import { Contact } from '../components/Contact/Contact'
-import { useTheme } from '../contexts/ThemeContext'
+import { ThemePicker } from '../components/ThemePicker/ThemePicker'
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +19,7 @@ const Home: NextPage = () => {
       <Portfolio />
       <About />
       <Contact />
+      <ThemePicker />
     </>
   )
 }

@@ -20,10 +20,10 @@ export type SkillData = {
 export type Theme = {
   name: string
   heroSectionBackground: StaticImageData
+  btnColor: string
   cssModule: {
     app: string
     btn: string
     btnOutline: string
-    textColor: string
   }
 }

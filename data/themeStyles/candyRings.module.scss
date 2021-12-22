@@ -1,12 +1,18 @@
 @use '../../styles/buttons.scss';
 @use '../../styles/color-vars';
 
-$primary: #5d1c99;
-$textColor: #231c29;
+// https://colorhunt.co/palette/3db2ffffeddaffb830ff2442
+// blue:   #3DB2FF
+// beige:  #FFEDDA
+// orange: #FFB830
+// red:    #FF2442
+
+$primary: #3db2ff;
+$textColor: #611652;
 $heroFont: metropolis;
 $bodyFont: inter;
-$selectionColor: #f0f0f0;
-$selectionBg: #5d1c99;
+$selectionColor: #ce9326;
+$selectionBg: #ffedda;
 
 .app {
   // font-family: orbitron;

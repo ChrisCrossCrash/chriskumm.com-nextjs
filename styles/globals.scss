@@ -2,8 +2,13 @@
 
 :root {
   --gutter-size: 1.2rem;
-  --color-dark: #{color-vars.$color-dark};
   --focus-ring-thickness: 4px;
+}
+
+::selection {
+  // These custom properties get set in the themes
+  background-color: var(--selection-bg);
+  color: var(--selection-color);
 }
 
 html {
@@ -18,7 +23,6 @@ html {
 body {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
-  color: var(--color-dark);
   line-height: 1.5;
 }
 

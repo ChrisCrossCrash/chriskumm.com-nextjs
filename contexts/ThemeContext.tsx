@@ -14,6 +14,7 @@ Rules/Guidelines for This Context:
 1. Whenever possible, you should favor CSS custom properties over calling useTheme.
    This will help performance and keep code simpler and easier to maintain.
 2. Themes are here to stay, so there should be no need to have default values that are overridden.
+   A noteable exception would be if the theme overrides a CSS custom property that doesn't get changed by every theme.
    Again, this will keep code simpler and easier to maintain.
 */
 
