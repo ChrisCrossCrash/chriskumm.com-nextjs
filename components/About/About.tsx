@@ -14,28 +14,29 @@ export const About = () => {
   const backEndRef = useRef(null)
   const mainContentRef = useRef(null)
 
-  useEffect(() => {
-    gsap.from(mainContentRef.current, {
-      opacity: 0,
-      y: 200,
-      scrollTrigger: mainContentRef.current,
-      duration: 1,
-    })
+  // TODO: Re-enable animations when a solution is found for the bug where reCAPTCHA breaks ScrollTrigger
+  // useEffect(() => {
+  //   gsap.from(mainContentRef.current, {
+  //     opacity: 0,
+  //     y: 200,
+  //     scrollTrigger: mainContentRef.current,
+  //     duration: 1,
+  //   })
 
-    gsap.from(frontEndRef.current, {
-      opacity: 0,
-      x: -200,
-      scrollTrigger: frontEndRef.current,
-      duration: 1,
-    })
+  //   gsap.from(frontEndRef.current, {
+  //     opacity: 0,
+  //     x: -200,
+  //     scrollTrigger: frontEndRef.current,
+  //     duration: 1,
+  //   })
 
-    gsap.from(backEndRef.current, {
-      opacity: 0,
-      x: 200,
-      scrollTrigger: backEndRef.current,
-      duration: 1,
-    })
-  }, [])
+  //   gsap.from(backEndRef.current, {
+  //     opacity: 0,
+  //     x: 200,
+  //     scrollTrigger: backEndRef.current,
+  //     duration: 1,
+  //   })
+  // }, [])
 
   return (
     <div

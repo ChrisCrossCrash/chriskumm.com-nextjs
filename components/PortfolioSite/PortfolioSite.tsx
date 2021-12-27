@@ -16,27 +16,28 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
   const textRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const textIsOnRightHalf =
-      textRef.current &&
-      textRef.current.getBoundingClientRect().left > window.innerWidth / 2
+  // TODO: Re-enable animations when a solution is found for the bug where reCAPTCHA breaks ScrollTrigger
+  // useEffect(() => {
+  //   const textIsOnRightHalf =
+  //     textRef.current &&
+  //     textRef.current.getBoundingClientRect().left > window.innerWidth / 2
 
-    // Text fades in from outer side
-    gsap.from(textRef.current, {
-      opacity: 0,
-      x: textIsOnRightHalf ? 200 : -200,
-      scrollTrigger: textRef.current,
-      duration: 1,
-    })
+  //   // Text fades in from outer side
+  //   gsap.from(textRef.current, {
+  //     opacity: 0,
+  //     x: textIsOnRightHalf ? 200 : -200,
+  //     scrollTrigger: textRef.current,
+  //     duration: 1,
+  //   })
 
-    // Image fades in from top
-    gsap.from(imageRef.current, {
-      opacity: 0,
-      y: 200,
-      scrollTrigger: imageRef.current,
-      duration: 1,
-    })
-  }, [])
+  //   // Image fades in from top
+  //   gsap.from(imageRef.current, {
+  //     opacity: 0,
+  //     y: 200,
+  //     scrollTrigger: imageRef.current,
+  //     duration: 1,
+  //   })
+  // }, [])
 
   return (
     <div className={styles.base}>
