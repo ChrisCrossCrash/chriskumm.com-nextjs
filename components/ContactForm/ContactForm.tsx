@@ -116,6 +116,7 @@ export const ContactForm = () => {
         message: '',
       }}
       validationSchema={contactFormSchema}
+      // TODO: Manually test that a challenge is given when the form is submitted
       onSubmit={(values) => handleSubmit(values, setSuccess, recaptchaRef)}
     >
       {({ isSubmitting }: { isSubmitting: boolean }) => {
@@ -170,7 +171,6 @@ export const ContactForm = () => {
                 ref={recaptchaRef}
                 size='invisible'
                 sitekey={recaptchaSiteKey}
-                asyncScriptOnLoad={async () => ScrollTrigger.refresh(true)}
               />
             )}
 
