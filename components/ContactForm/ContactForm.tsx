@@ -170,7 +170,7 @@ export const ContactForm = () => {
                 ref={recaptchaRef}
                 size='invisible'
                 sitekey={recaptchaSiteKey}
-                asyncScriptOnLoad={ScrollTrigger.refresh}
+                asyncScriptOnLoad={async () => ScrollTrigger.refresh()}
               />
             )}
 
