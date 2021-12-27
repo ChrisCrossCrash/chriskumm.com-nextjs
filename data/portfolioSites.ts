@@ -8,21 +8,23 @@ export const portfolioSites: PortfolioSiteData[] = [
     title: 'MLK Seminars',
     subtitle: 'Commercial website',
     description:
-      'A single page app (SPA) where electrical industry professionals sign up for in-person training seminars',
+      'A place where electrical industry professionals sign up for in-person training seminars. The site has a Next.js front end and a Django Rest Framework back end.',
     features:
-      'Google Maps, Stripe Elements, admin page, email sending/receiving, email notifications, SMS notifications, mass email, custom email template, automatic database backups',
+      'Google Maps, Stripe Elements, admin page, email sending/receiving, email notifications, SMS notifications, mass email, custom email template, automatic database backups, advanced database features for managing class packages and sessions separately',
     technologies:
-      'React, React Router, React Bootstrap, Django REST Framework, SCSS, Bootstrap, Django, Stripe API, Nginx, AWS EC2, AWS SES, AWS Route 53, AWS SNS, AWS Lambda, AWS S3',
+      'React (Next.js), TypeScript (strict), Django, Django REST Framework, Sass (SCSS modules), Formik, Google reCAPTCHA, React Testing Library, Cypress, Stripe API, Nginx, AWS EC2, AWS SES, AWS SNS, AWS Lambda, AWS Route 53, Vercel',
     screenshot: mlkMockup,
     url: 'https://www.mlkseminars.com',
   },
   {
     title: 'InstaArt',
     subtitle: 'Art blog',
-    description: 'An online art museum.',
-    features: 'admin page, dynamic background, pagination, full-screen modals',
+    description:
+      'An online art museum. The site has a Next.js front end and a Django Rest Framework back end.',
+    features:
+      'admin page, dynamic background, pagination, full-screen modals, custom base-64 image optimization for user-uploaded images',
     technologies:
-      'Next JS, TypeScript (strict), SCSS, Greensock, React Bootstrap, Django REST Framework, Nginx, AWS Lightsail',
+      'React (Next.js), TypeScript (strict), Django, Django REST Framework, Sass (SCSS modules), Greensock (AKA GSAP), React Bootstrap, Google reCAPTCHA, Amazon Lightsail',
     screenshot: instaArtMockup,
     // Don't forget to also change the redirect in next.config.js if this changes.
     url: 'https://insta-art-frontend.vercel.app',
@@ -30,10 +32,11 @@ export const portfolioSites: PortfolioSiteData[] = [
   {
     title: 'ChrisKumm.com',
     subtitle: 'Portfolio website',
-    description: 'This is where I showcase my work.',
-    features: 'Animations, custom Telegram API, reCAPTCHA, Optimized images',
+    description:
+      'This is where I showcase my work. The site has a Next.js front end and a custom Telegram integration for receiving contact form messages.',
+    features: 'Animations, contact form, reCAPTCHA, optimized images',
     technologies:
-      'TypeScript (strict), Next JS, GreenSock, SCSS modules, Cypress, Vercel, AWS Route 53, Formik',
+      'TypeScript (strict), Next JS, GreenSock (AKA GSAP), Sass (SCSS modules), Formik, Cypress, Vercel, AWS Route 53, custom Telegram messaging integration',
     screenshot: ckMockup,
   },
 ]
