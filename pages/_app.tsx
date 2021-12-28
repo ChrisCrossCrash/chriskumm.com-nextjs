@@ -9,6 +9,7 @@ import '@chris-cross-crash/ck-css/colors.scss'
 import '../styles/globals.scss'
 import '../styles/buttons.scss'
 import { ThemeProvider } from '../contexts/ThemeContext'
+import '../styles/animations.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -16,7 +16,6 @@
     "@fontsource/metropolis": "^4.5.0",
     "@fontsource/orbitron": "^4.5.1",
     "formik": "^2.2.9",
-    "gsap": "^3.8.0",
     "modern-normalize": "^1.1.0",
     "next": "^12.0.2",
     "react": "^17.0.2",
