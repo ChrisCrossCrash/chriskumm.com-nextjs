@@ -6,6 +6,7 @@ type TextInputProps = {
   variant: 'input' | 'textarea'
   label: string
   id: string
+  className?: string
 } & FieldConfig
 
 export const TextInput = React.forwardRef(function TextInputInner(
@@ -40,7 +41,7 @@ export const TextInput = React.forwardRef(function TextInputInner(
   }
 
   return (
-    <div ref={ref} className={styles.base}>
+    <div ref={ref} className={`${styles.base} ${props.className}`}>
       <label
         className={`${styles.label} ${invalid && styles.invalidText}`}
         htmlFor={props.id || props.name}

@@ -2,13 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Formik, Form } from 'formik'
 import { TextInput } from '../TextInput/TextInput'
 import { Spinner } from '../Spinner/Spinner'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import ReCAPTCHA from 'react-google-recaptcha'
 import styles from './ContactForm.module.scss'
 import { contactFormSchema } from '../../utils/yupSchemas'
-
-gsap.registerPlugin(ScrollTrigger)
 
 type SubmittedValues = {
   name: string
@@ -81,9 +77,9 @@ const handleSubmit = async (
 export const ContactForm = () => {
   const [success, setSuccess] = useState(false)
 
-  const nameRef = useRef<HTMLDivElement>(null)
-  const emailRef = useRef<HTMLDivElement>(null)
-  const messageRef = useRef<HTMLDivElement>(null)
+  const nameRef = useRef<HTMLDivElement>(null!)
+  const emailRef = useRef<HTMLDivElement>(null!)
+  const messageRef = useRef<HTMLDivElement>(null!)
   const submitRef = useRef<HTMLButtonElement>(null)
   const recaptchaRef = useRef<ReCAPTCHA>(null)
 
@@ -95,19 +91,6 @@ export const ContactForm = () => {
     )
   }
 
-  useEffect(() => {
-    const stagger = 0.2
-    gsap
-      .timeline({ scrollTrigger: nameRef.current })
-      .from([nameRef.current, emailRef.current, messageRef.current], {
-        opacity: 0,
-        x: -200,
-        duration: 0.5,
-        stagger: stagger,
-      })
-      .from(submitRef.current, { duration: 0.3, opacity: 0 }, '>-0.3')
-  }, [])
-
   return (
     <Formik
       initialValues={{
@@ -116,6 +99,7 @@ export const ContactForm = () => {
         message: '',
       }}
       validationSchema={contactFormSchema}
+      // TODO: Manually test that a challenge is given when the form is submitted
       onSubmit={(values) => handleSubmit(values, setSuccess, recaptchaRef)}
     >
       {({ isSubmitting }: { isSubmitting: boolean }) => {
@@ -170,7 +154,6 @@ export const ContactForm = () => {
                 ref={recaptchaRef}
                 size='invisible'
                 sitekey={recaptchaSiteKey}
-                asyncScriptOnLoad={async () => ScrollTrigger.refresh()}
               />
             )}
 

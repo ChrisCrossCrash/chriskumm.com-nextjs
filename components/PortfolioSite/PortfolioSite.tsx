@@ -1,43 +1,40 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { KatoButton } from '../KatoButton/KatoButton'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { PortfolioSiteData } from '../../types/types'
 import styles from './PortfolioSite.module.scss'
-
-gsap.registerPlugin(ScrollTrigger)
 
 type PortfolioSiteProps = {
   project: PortfolioSiteData
 }
 
 export const PortfolioSite = (props: PortfolioSiteProps) => {
-  const textRef = useRef<HTMLDivElement>(null)
-  const imageRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null!)
+  const imageRef = useRef<HTMLDivElement>(null!)
 
-  // TODO: Re-enable animations when a solution is found for the bug where reCAPTCHA breaks ScrollTrigger
-  // useEffect(() => {
-  //   const textIsOnRightHalf =
-  //     textRef.current &&
-  //     textRef.current.getBoundingClientRect().left > window.innerWidth / 2
+  // Animations
+  useEffect(() => {
+    const textIsOnRightHalf =
+      textRef.current &&
+      textRef.current.getBoundingClientRect().left > window.innerWidth / 2
 
-  //   // Text fades in from outer side
-  //   gsap.from(textRef.current, {
-  //     opacity: 0,
-  //     x: textIsOnRightHalf ? 200 : -200,
-  //     scrollTrigger: textRef.current,
-  //     duration: 1,
-  //   })
+    const infoTextObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle(
+          textIsOnRightHalf ? 'fadeInFromRight' : 'fadeInFromLeft',
+          !entry.isIntersecting
+        )
+      }
+    })
+    infoTextObserver.observe(textRef.current)
 
-  //   // Image fades in from top
-  //   gsap.from(imageRef.current, {
-  //     opacity: 0,
-  //     y: 200,
-  //     scrollTrigger: imageRef.current,
-  //     duration: 1,
-  //   })
-  // }, [])
+    const screenshotHolderObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle('fadeInFromAbove', !entry.isIntersecting)
+      }
+    })
+    screenshotHolderObserver.observe(imageRef.current)
+  }, [])
 
   return (
     <div className={styles.base}>

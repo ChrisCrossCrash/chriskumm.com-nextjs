@@ -1,0 +1,14 @@
+.fadeInFromLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.fadeInFromRight {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.fadeInFromAbove {
+  opacity: 0;
+  transform: translateY(-100px);
+}
