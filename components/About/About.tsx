@@ -1,40 +1,36 @@
 import React, { useEffect, useRef } from 'react'
 import { SectionHeading } from '../SectionHeading/SectionHeading'
 import { SkillSection } from '../SkillSection/SkillSection'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { frontEnd, backEnd } from '../../data/skills'
 import styles from './About.module.scss'
 import { aboutBg } from './aboutBg'
 
-gsap.registerPlugin(ScrollTrigger)
-
 export const About = () => {
-  const frontEndRef = useRef(null)
-  const backEndRef = useRef(null)
-  const mainContentRef = useRef(null)
+  const frontEndRef = useRef(null!)
+  const backEndRef = useRef(null!)
+  const mainContentRef = useRef(null!)
 
   useEffect(() => {
-    gsap.from(mainContentRef.current, {
-      opacity: 0,
-      y: 200,
-      scrollTrigger: mainContentRef.current,
-      duration: 1,
+    const mainContentObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle('fadeInFromAbove', !entry.isIntersecting)
+      }
     })
+    mainContentObserver.observe(mainContentRef.current)
 
-    gsap.from(frontEndRef.current, {
-      opacity: 0,
-      x: -200,
-      scrollTrigger: frontEndRef.current,
-      duration: 1,
+    const frontEndObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle('fadeInFromLeft', !entry.isIntersecting)
+      }
     })
+    frontEndObserver.observe(frontEndRef.current)
 
-    gsap.from(backEndRef.current, {
-      opacity: 0,
-      x: 200,
-      scrollTrigger: backEndRef.current,
-      duration: 1,
+    const backEndObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle('fadeInFromRight', !entry.isIntersecting)
+      }
     })
+    backEndObserver.observe(backEndRef.current)
   }, [])
 
   return (
@@ -44,7 +40,7 @@ export const About = () => {
       style={{ backgroundImage: aboutBg }}
     >
       <div className={styles.contained}>
-        <div ref={mainContentRef}>
+        <div ref={mainContentRef} className={styles.mainContent}>
           <SectionHeading>Full Stack Solutions</SectionHeading>
           <div className={styles.missionSection}>
             <p>
@@ -68,10 +64,10 @@ export const About = () => {
 
         {/* skill cards */}
         <div className={styles.skillCards}>
-          <div ref={frontEndRef}>
+          <div ref={frontEndRef} className={styles.frontEndContainer}>
             <SkillSection {...frontEnd} />
           </div>
-          <div ref={backEndRef}>
+          <div ref={backEndRef} className={styles.backEndContainer}>
             <SkillSection {...backEnd} />
           </div>
         </div>
