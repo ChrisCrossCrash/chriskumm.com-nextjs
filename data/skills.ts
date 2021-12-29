@@ -1,4 +1,6 @@
 import { SkillData } from '../types/types'
+import { FrontEndSvg } from './FrontEndSvg'
+import { BackEndSvg } from './BackEndSvg'
 
 export const frontEnd: SkillData = {
   title: 'Front End',
@@ -8,10 +10,7 @@ export const frontEnd: SkillData = {
     'Tailwind CSS | Formik',
     'Sass | GreenSock',
   ],
-  image: {
-    src: '/images/iconfinder_browser_2955254.svg',
-    alt: 'Front End',
-  },
+  image: FrontEndSvg,
 }
 
 export const backEnd: SkillData = {
@@ -22,8 +21,5 @@ export const backEnd: SkillData = {
     'AWS | Stripe',
     'Telegram API',
   ],
-  image: {
-    src: '/images/iconfinder_machines_2955248.svg',
-    alt: 'back End',
-  },
+  image: BackEndSvg,
 }

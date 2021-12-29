@@ -1,3 +1,5 @@
+import React from 'react'
+
 export type PortfolioSiteData = {
   title: string
   subtitle: string
@@ -11,8 +13,5 @@ export type PortfolioSiteData = {
 export type SkillData = {
   title: string
   skills: string[]
-  image: {
-    src: string
-    alt: string
-  }
+  image: React.FC
 }

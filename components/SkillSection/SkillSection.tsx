@@ -4,15 +4,7 @@ import styles from './SkillSection.module.scss'
 
 export const SkillSection = (props: SkillData) => (
   <div className={`glass ${styles.base}`}>
-    {/* TODO: Ensure that this image load doesn't require an extra round trip. */}
-    <Image
-      src={props.image.src}
-      alt={props.image.alt}
-      width={400}
-      height={400}
-      // Start loading when the bottom of the viewport is within 500px of the image.
-      lazyBoundary='500px'
-    />
+    <props.image />
     <h1 className={styles.heading}>{props.title}</h1>
     <div className={styles.body}>
       {props.skills.map((item: string) => (
