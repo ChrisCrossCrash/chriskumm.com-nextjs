@@ -17,7 +17,7 @@ My personal portfolio.
 
 ## GDPR Compliance
 
-Here are some helpful links for when completeing the GDPR compliance TODO item:
+Here are some helpful links for when completing the GDPR compliance TODO item:
 
 - [React Cookie Consent](https://www.npmjs.com/package/react-cookie-consent)
 - [YouTube: Is Your Website GDPR Ready? Follow this 7-step Checklist](https://www.youtube.com/watch?v=OrLJ1rj8ZTY)

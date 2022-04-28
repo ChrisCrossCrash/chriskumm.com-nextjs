@@ -27,7 +27,7 @@ type CaptchaValidation = {
  * https://developers.google.com/recaptcha/docs/verify#api_request
  */
 const verifyToken = async (token: string): Promise<CaptchaValidation> => {
-  const captchResponse = await fetch(
+  const captchaResponse = await fetch(
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
     {
       headers: {
@@ -36,7 +36,7 @@ const verifyToken = async (token: string): Promise<CaptchaValidation> => {
       method: 'POST',
     }
   )
-  return captchResponse.json()
+  return captchaResponse.json()
 }
 
 /** An API endpoint that receives messages from the contact form. */
