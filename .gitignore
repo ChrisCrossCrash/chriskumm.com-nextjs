@@ -41,3 +41,6 @@ yarn-error.log*
 
 # ESLint
 .eslintcache
+
+# Code Spell Checker configuration
+cspell.json
