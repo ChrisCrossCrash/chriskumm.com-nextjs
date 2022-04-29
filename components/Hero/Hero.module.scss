@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--violet-900);
   background-size: cover;
 
   // The hero section should be at least as tall as the screen or 550px,
@@ -43,6 +42,19 @@
 .ctaBtn {
   margin-right: 1.25rem;
   margin-bottom: 0.5rem;
+}
+
+.videoBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  // Make the background video a little darker.
+  filter: brightness(0.7);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), var(--violet-900));
 }
 
 // You can't use css custom properties in media queries.
