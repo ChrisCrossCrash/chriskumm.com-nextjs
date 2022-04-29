@@ -4,7 +4,10 @@ import styles from './Contact.module.scss'
 import { useInView } from 'react-intersection-observer'
 
 export const Contact = () => {
-  const [ref, inView] = useInView()
+  const [ref, inView] = useInView({
+    fallbackInView: true,
+    triggerOnce: true,
+  })
   return (
     <div id='contact' className={styles.base}>
       <SectionHeading>Contact</SectionHeading>
