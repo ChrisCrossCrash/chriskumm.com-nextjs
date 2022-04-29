@@ -26,6 +26,7 @@ export const TextInput = React.forwardRef(function TextInputInner(
     inputElement = (
       <input
         className={`${styles.input} ${invalid ? styles.inputInvalid : ''}`}
+        id={props.id}
         {...field}
       />
     )
@@ -34,6 +35,7 @@ export const TextInput = React.forwardRef(function TextInputInner(
       <textarea
         className={`${styles.textarea}
         ${invalid ? styles.textareaInvalid : ''}`}
+        id={props.id}
         {...field}
       />
     )
