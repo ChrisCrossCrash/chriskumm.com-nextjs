@@ -5,6 +5,7 @@ import { Spinner } from '../Spinner/Spinner'
 import ReCAPTCHA from 'react-google-recaptcha'
 import styles from './ContactForm.module.scss'
 import { contactFormSchema } from '../../utils/yupSchemas'
+import { useInView } from 'react-intersection-observer'
 
 type SubmittedValues = {
   name: string
@@ -75,6 +76,11 @@ const handleSubmit = async (
 }
 
 export const ContactForm = () => {
+  const [formRef, inView] = useInView({
+    fallbackInView: true,
+    triggerOnce: true,
+  })
+
   const [success, setSuccess] = useState(false)
 
   const nameRef = useRef<HTMLDivElement>(null!)
@@ -112,7 +118,7 @@ export const ContactForm = () => {
         }
 
         return (
-          <Form>
+          <Form ref={formRef}>
             <TextInput
               ref={nameRef}
               variant='input'
@@ -148,8 +154,9 @@ export const ContactForm = () => {
             </button>
 
             {/* Don't render the ReCAPTCHA element in development. This is safe because the
-             verification on the `/api/submit-inquiry` endpoint is only done in production. */}
-            {process.env.NODE_ENV !== 'development' && (
+             verification on the `/api/submit-inquiry` endpoint is only done in production.
+             Also, only show render it when the form is scrolled into view. */}
+            {process.env.NODE_ENV !== 'development' && inView && (
               <ReCAPTCHA
                 ref={recaptchaRef}
                 size='invisible'

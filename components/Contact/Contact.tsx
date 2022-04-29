@@ -4,16 +4,11 @@ import styles from './Contact.module.scss'
 import { useInView } from 'react-intersection-observer'
 
 export const Contact = () => {
-  const [ref, inView] = useInView({
-    fallbackInView: true,
-    triggerOnce: true,
-  })
   return (
     <div id='contact' className={styles.base}>
       <SectionHeading>Contact</SectionHeading>
-      <div className={styles.formContainer} ref={ref}>
-        {/* Only render the form when it is scrolled in to view */}
-        {inView && <ContactForm />}
+      <div className={styles.formContainer}>
+        <ContactForm />
       </div>
     </div>
   )
