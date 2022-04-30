@@ -1,7 +1,6 @@
 import { SectionHeading } from '../SectionHeading/SectionHeading'
 import { ContactForm } from '../ContactForm/ContactForm'
 import styles from './Contact.module.scss'
-import { useInView } from 'react-intersection-observer'
 
 export const Contact = () => {
   return (

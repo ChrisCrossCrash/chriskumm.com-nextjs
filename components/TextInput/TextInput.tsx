@@ -1,5 +1,5 @@
 import React from 'react'
-import { FieldConfig, FieldHookConfig, useField } from 'formik'
+import { FieldHookConfig, useField } from 'formik'
 import styles from './TextInput.module.scss'
 
 type TextInputProps = {

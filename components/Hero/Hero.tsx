@@ -1,6 +1,5 @@
 import styles from './Hero.module.scss'
 import { Waves } from '../Waves/Waves'
-import { heroBg } from './heroBg'
 
 export const Hero = () => (
   <div
