@@ -2,6 +2,7 @@ import { PortfolioSiteData } from '../types/types'
 import mlkMockup from '../public/images/mockup_mlk.png'
 import instaArtMockup from '../public/images/mockup_instaart.png'
 import ckMockup from '../public/images/mockup_ck.png'
+import blenderLogo from '../public/images/blender-logo.jpg'
 
 export const portfolioSites: PortfolioSiteData[] = [
   {
