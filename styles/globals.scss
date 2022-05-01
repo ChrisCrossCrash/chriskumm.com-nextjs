@@ -48,3 +48,8 @@ body {
   border: solid 5px transparent;
   background-clip: padding-box;
 }
+
+.darken-bg {
+  // Add a semi-transparent background
+  filter: brightness(0.8);
+}

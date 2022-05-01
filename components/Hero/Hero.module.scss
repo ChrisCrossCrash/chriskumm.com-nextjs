@@ -8,6 +8,7 @@
   // The hero section should be at least as tall as the screen or 550px,
   // which is the least height that can still accommodate The content.
   min-height: max(100vh, 550px);
+  height: 100vh;
 }
 
 .container {
@@ -18,6 +19,10 @@
   color: var(--white);
   text-shadow: 0 0 15px #ffffff55;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   * {
     margin-top: 0;
