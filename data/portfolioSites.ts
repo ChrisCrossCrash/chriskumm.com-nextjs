@@ -4,6 +4,7 @@ import instaArtMockup from '../public/images/mockup_instaart.png'
 import ckMockup from '../public/images/mockup_ck.png'
 import blenderLogo from '../public/images/blender-logo.jpg'
 import rPlaceGigapixel from '../public/images/mockup_rplacegiga.png'
+import depthSectionMockup from '../public/images/mockup_depthsection.png'
 
 export const portfolioSites: PortfolioSiteData[] = [
   {
@@ -53,6 +54,17 @@ export const portfolioSites: PortfolioSiteData[] = [
     screenshot: instaArtMockup,
     // Don't forget to also change the redirect in next.config.js if this changes.
     url: 'https://insta-art-frontend.vercel.app',
+  },
+  {
+    title: 'Depth Section',
+    subtitle: 'NPM Package',
+    description: 'Easy to use 3D parallax sections to add depth to your page.',
+    features: 'Easy to use API, Storybook examples, responsive design',
+    technologies:
+      'Rollup, Three.js, React Three Fiber, React, TypeScript, Storybook, Vercel',
+    screenshot: depthSectionMockup,
+    // Don't forget to also change the redirect in next.config.js if this changes.
+    url: 'https://www.npmjs.com/package/depth-section',
   },
   {
     title: 'ChrisKumm.com',
