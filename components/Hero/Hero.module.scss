@@ -5,6 +5,9 @@
   justify-content: center;
   background-size: cover;
 
+  // Add a gradient background for when the depth section is loading.
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), var(--violet-900));
+
   // The hero section should be at least as tall as the screen or 550px,
   // which is the least height that can still accommodate The content.
   min-height: max(100vh, 550px);
