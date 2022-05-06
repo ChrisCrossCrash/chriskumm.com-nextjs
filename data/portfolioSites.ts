@@ -37,7 +37,7 @@ export const portfolioSites: PortfolioSiteData[] = [
     features:
       'Google Maps style image zooming, social sharing buttons, fullscreen mode',
     technologies:
-      'HTML, Sass (SCSS), JavaScript, Snowpack, Microsoft Deep Zoom specification, OpenSeadragon, Sharp (JS image library), Poetry, ImageIO, Pandas, NumPy, Jupyter Notebook, NPM workspaces, Vercel,',
+      'HTML, Sass (SCSS), JavaScript, Snowpack, Microsoft Deep Zoom specification, OpenSeadragon, Sharp (JS image library), Poetry, ImageIO, Pandas, NumPy, Jupyter Notebook, NPM workspaces, Vercel',
     screenshot: rPlaceGigapixel,
     url: 'https://r-place-gigapixel.vercel.app/',
   },
