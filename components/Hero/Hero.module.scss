@@ -5,6 +5,8 @@
   justify-content: center;
   background-size: cover;
 
+  overflow-x: hidden;
+
   // Add a gradient background for when the depth section is loading.
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), var(--violet-900));
 
@@ -17,8 +19,6 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
   color: var(--white);
   text-shadow: 0 0 15px #ffffff55;
   width: 100%;
@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
   * {
     margin-top: 0;
@@ -40,7 +40,7 @@
 }
 
 .headingLarge {
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
   font-weight: 900;
   text-transform: uppercase;
@@ -66,7 +66,25 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), var(--violet-900));
 }
 
-// You can't use css custom properties in media queries.
+// var(--screen-xs) is defined as 475px in ck.css.
+@media (min-width: 475px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .headingSmall {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .headingLarge {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
 // var(--screen-sm) is defined as 640px in ck.css.
 @media (min-width: 640px) {
   .headingSmall {
