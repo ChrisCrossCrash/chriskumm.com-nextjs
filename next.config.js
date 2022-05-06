@@ -27,6 +27,11 @@ module.exports = {
         destination: 'https://ck-shopping.vercel.app/',
         permanent: false,
       },
+      {
+        source: '/github',
+        destination: 'https://github.com/ChrisCrossCrash',
+        permanent: false,
+      },
     ]
   },
 }
