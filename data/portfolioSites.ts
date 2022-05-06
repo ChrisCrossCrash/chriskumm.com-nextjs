@@ -3,6 +3,7 @@ import mlkMockup from '../public/images/mockup_mlk.png'
 import instaArtMockup from '../public/images/mockup_instaart.png'
 import ckMockup from '../public/images/mockup_ck.png'
 import blenderLogo from '../public/images/blender-logo.jpg'
+import rPlaceGigapixel from '../public/images/mockup_rplacegiga.png'
 
 export const portfolioSites: PortfolioSiteData[] = [
   {
@@ -27,6 +28,18 @@ export const portfolioSites: PortfolioSiteData[] = [
     technologies: 'Blender, Python, Pandas, NumPy, Jupyter Notebook, ImageIO',
     screenshot: blenderLogo,
     url: 'https://github.com/ChrisCrossCrash/r-place-blender',
+  },
+  {
+    title: 'r/Place Gigapixel Explorer',
+    subtitle: 'r/Place 2022 Data Visualization Website',
+    description:
+      "A website for viewing a 3D isometric view of r/Place 2022 as a gigapixel image, and the tools used to create it. The gigapixel image has a total resolution of 36864 x 27648 pixels. That's over a billion pixels! This large image was separated into over 9000 smaller images which get loaded on demand as users pan and zoom around the image.",
+    features:
+      'Google Maps style image zooming, social sharing buttons, fullscreen mode',
+    technologies:
+      'HTML, Sass (SCSS), JavaScript, Snowpack, Microsoft Deep Zoom specification, OpenSeadragon, Sharp (JS image library), Poetry, ImageIO, Pandas, NumPy, Jupyter Notebook, NPM workspaces, Vercel,',
+    screenshot: rPlaceGigapixel,
+    url: 'https://r-place-gigapixel.vercel.app/',
   },
   {
     title: 'InstaArt',
