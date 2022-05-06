@@ -1,8 +1,7 @@
 import { Suspense, useRef } from 'react'
 import { DepthSection, getCameraAimPos } from 'depth-section'
-import RPlaceModel from './RPlaceMario'
+import RPlaceModel from './RPlace'
 import { useFrame } from '@react-three/fiber'
-import { Environment } from '@react-three/drei'
 import * as THREE from 'three'
 
 const RPlaceInner = () => {
@@ -16,9 +15,6 @@ const RPlaceInner = () => {
 
     let [x, y] = getCameraAimPos(threeState)
 
-    x += threeState.mouse.x / 7
-    y += threeState.mouse.y / 7
-
     rPlaceMesh.position.y = y
     rPlaceMesh.position.x = x
   })
@@ -29,9 +25,6 @@ const RPlaceInner = () => {
         <group ref={rPlaceRef}>
           <RPlaceModel />
         </group>
-      </Suspense>
-      <Suspense fallback={null}>
-        <Environment preset='apartment' />
       </Suspense>
     </>
   )
@@ -44,12 +37,25 @@ type DepthSectionMarioProps = {
 
 export const DepthSectionMario = (props: DepthSectionMarioProps) => {
   return (
+    // FIXME: Why is the "Fragmented" glb file being downloaded?
     <DepthSection
       htmlOverlay={props.children}
       debug={props.debug}
-      canvasClassName='darken-bg'
+      // TODO: Fix the depth-section prop type to get rid of this `any`.
+      canvasProps={
+        {
+          shadows: true,
+          camera: {
+            near: 0.1,
+            far: 10,
+            fov: 120,
+          },
+        } as any
+      }
     >
       <RPlaceInner />
+      <ambientLight intensity={0.5} />
+      <spotLight position={[4, 2.5, 2.5]} intensity={1.5} angle={2} />
     </DepthSection>
   )
 }

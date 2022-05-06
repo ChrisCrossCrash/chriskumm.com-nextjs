@@ -45,11 +45,9 @@ body {
 /* Warning: `backdrop-filter: blur()` doesn't work in Firefox with default settings (as of Jan 2021) */
 .glass {
   backdrop-filter: blur(10px);
-  border: solid 5px transparent;
+  // border: solid 5px transparent;
   background-clip: padding-box;
-}
-
-.darken-bg {
-  // Add a semi-transparent background
-  filter: brightness(0.8);
+  background-color: rgba(30, 30, 30, 0.7);
+  padding: 2rem;
+  border-radius: 2rem;
 }
