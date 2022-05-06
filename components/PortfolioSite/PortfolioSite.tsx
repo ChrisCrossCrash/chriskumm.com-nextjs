@@ -20,6 +20,8 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
 
     const infoTextObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) {
+        // FIXME: The from right or from left classes don't change if the screen
+        // is resized.
         entry.target.classList.toggle(
           textIsOnRightHalf ? 'fadeInFromRight' : 'fadeInFromLeft',
           !entry.isIntersecting
