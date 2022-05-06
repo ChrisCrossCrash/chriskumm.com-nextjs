@@ -37,7 +37,6 @@ type DepthSectionMarioProps = {
 
 export const DepthSectionMario = (props: DepthSectionMarioProps) => {
   return (
-    // FIXME: Why is the "Fragmented" glb file being downloaded?
     <DepthSection
       htmlOverlay={props.children}
       debug={props.debug}

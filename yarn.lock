@@ -378,10 +378,10 @@
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.3.tgz#ff5e2f1902969d305225a047c8a0fd5c915cebef"
   integrity sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==
 
-"@types/three@^0.139.0":
-  version "0.139.0"
-  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.139.0.tgz#69af1f0c52f8eea390f513e05478af1dd7f49e6f"
-  integrity sha512-4V/jZhyq7Mv05coUzxL3bz8AuBOSi/1F0RY7ujisHTV0Amy/fnYJ+s7TSJ1/hXjZukSkpuFRgV+wvWUEMbsMbQ==
+"@types/three@^0.140.0":
+  version "0.140.0"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.140.0.tgz#3b74a021a69a6e2cd0e2550def15aa4c1c20e924"
+  integrity sha512-YPJLSIY6uKUOp1k6BZYDq5GtEIdhfeK04UCbc9IPAVbdn/RNjkfrbnyd7smrsNkJhc0IFASLpd3AAYgwqgXKVQ==
 
 "@types/yauzl@^2.9.1":
   version "2.10.0"
@@ -1076,9 +1076,9 @@ dashdash@^1.12.0:
     assert-plus "^1.0.0"
 
 dayjs@^1.10.4:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.1.tgz#90b33a3dda3417258d48ad2771b415def6545eb0"
-  integrity sha512-ER7EjqVAMkRRsxNCC5YqJ9d9VQYuWdGt7aiH2qA5R5wt8ZmWaP2dLUSIK6y/kVzLMlmh1Tvu5xUf4M/wdGJ5KA==
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.2.tgz#fa0f5223ef0d6724b3d8327134890cfe3d72fbe5"
+  integrity sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==
 
 debounce@^1.2.1:
   version "1.2.1"
@@ -1158,10 +1158,10 @@ delegates@^1.0.0:
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
-depth-section@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/depth-section/-/depth-section-0.10.1.tgz#f6d0abd4a7c40f58c9f6ff39db1cb25d746cef7a"
-  integrity sha512-UEEsl/KQOw6nt58UL4f/jqOrl7NnEEk8HT0rjkBAFCeFfjDEw79isgnAZpUy7SMywS67kc5e5VtYOE8e8mepLw==
+depth-section@^0.11.0:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/depth-section/-/depth-section-0.11.1.tgz#034ba0593df9b5f2f6e34dc9d305b7c470590df3"
+  integrity sha512-Vl930E2lcOJIfPZ3raWQMzL0H2Vn5Z5gVGLMK7qjswYw7svAhdfXAu6nKWgXY5PtLD+kBRFQvwh9h7RtsqmfsA==
 
 detect-gpu@^4.0.19:
   version "4.0.20"

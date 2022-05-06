@@ -14,6 +14,18 @@ module.exports = {
     tsconfigPath: './tsconfig.build.json',
   },
 
+  webpack(config) {
+    // Prevent the error: `Module not found: Can't resolve 'fs'`
+    // For some reason this happens when importing `depth-section`
+    // https://stackoverflow.com/a/67478653/8886761
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+    }
+
+    return config
+  },
+
   // https://nextjs.org/docs/api-reference/next.config.js/redirects
   async redirects() {
     return [
