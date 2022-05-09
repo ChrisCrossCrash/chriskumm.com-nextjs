@@ -44,3 +44,6 @@ yarn-error.log*
 
 # Code Spell Checker configuration
 cspell.json
+
+# General ignored files
+gitignored
