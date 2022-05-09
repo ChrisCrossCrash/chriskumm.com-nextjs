@@ -38,6 +38,39 @@ const Home: NextPage = () => (
       />
       <meta name='msapplication-TileColor' content='#2b5797' />
       <meta name='theme-color' content='#ffffff' />
+
+      {/* Meta Tags */}
+      {/* https://metatags.io/ */}
+
+      {/* Primary Meta Tags */}
+      <meta name='title' content='ChrisKumm.com' />
+      <meta name='description' content='Professional Full-Stack Developer' />
+
+      {/* Open Graph / Facebook */}
+      <meta property='og:type' content='website' />
+      <meta property='og:url' content='https://www.chriskumm.com/' />
+      <meta property='og:title' content='ChrisKumm.com' />
+      <meta
+        property='og:description'
+        content='Professional Full-Stack Developer'
+      />
+      <meta
+        property='og:image'
+        content='https://www.chriskumm.com/images/cklogo-open-graph.jpg'
+      />
+
+      {/* Twitter */}
+      <meta property='twitter:card' content='summary_large_image' />
+      <meta property='twitter:url' content='https://www.chriskumm.com/' />
+      <meta property='twitter:title' content='ChrisKumm.com' />
+      <meta
+        property='twitter:description'
+        content='Professional Full-Stack Developer'
+      />
+      <meta
+        property='twitter:image'
+        content='https://www.chriskumm.com/images/cklogo-open-graph.jpg'
+      />
     </Head>
 
     <Hero />
