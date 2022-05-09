@@ -21,7 +21,7 @@ export const portfolioSites: PortfolioSiteData[] = [
   },
   {
     title: 'r/Place Data Visualization',
-    subtitle: 'Open Source 3D Data Visualization',
+    subtitle: 'Open source 3D data visualization',
     description:
       'Tools for r/Place data visualization with Blender and Python.',
     features:
@@ -32,7 +32,7 @@ export const portfolioSites: PortfolioSiteData[] = [
   },
   {
     title: 'r/Place Gigapixel Explorer',
-    subtitle: 'r/Place 2022 Data Visualization Website',
+    subtitle: 'r/Place 2022 data visualization website',
     description:
       "A website for viewing a 3D isometric view of r/Place 2022 as a gigapixel image, and the tools used to create it. The gigapixel image has a total resolution of 36864 x 27648 pixels. That's over a billion pixels! This large image was separated into over 9000 smaller images which get loaded on demand as users pan and zoom around the image.",
     features:
@@ -57,7 +57,7 @@ export const portfolioSites: PortfolioSiteData[] = [
   },
   {
     title: 'Depth Section',
-    subtitle: 'NPM Package',
+    subtitle: 'NPM package',
     description: 'Easy to use 3D parallax sections to add depth to your page.',
     features: 'Easy to use API, Storybook examples, responsive design',
     technologies:
