@@ -47,3 +47,6 @@ cspell.json
 
 # General ignored files
 gitignored
+
+# JetBrains Project Files
+.idea
