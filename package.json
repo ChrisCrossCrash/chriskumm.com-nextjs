@@ -28,7 +28,7 @@
     "react-intersection-observer": "^9.1.0",
     "sass": "^1.43.4",
     "sharp": "^0.31.1",
-    "three": ">=0.141.0",
+    "three": "^0.144.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
