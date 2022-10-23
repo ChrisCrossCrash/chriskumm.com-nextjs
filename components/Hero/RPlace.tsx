@@ -7,14 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
-type GLTFResult = GLTF & {
-  nodes: {
-    rPlaceGrid: THREE.Mesh
-  }
-  materials: {
-    ColorMap: THREE.MeshStandardMaterial
-  }
-}
+type GLTFResult = GLTF & { [key: string]: any }
 
 export default function Model({ ...props }: JSX.IntrinsicElements['group']) {
   const group =
