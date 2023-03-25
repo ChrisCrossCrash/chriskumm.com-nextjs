@@ -166,6 +166,10 @@ describe('Contact Form', () => {
 
   it("Shows an error when the user blurs the name input while it's empty", function () {
     cy.visit('/')
+
+    // Scroll to the bottom of the page so that the form elements appear.
+    cy.scrollTo('bottom')
+
     cy.getInputByLabel('Name')
       .focus()
       .blur()
@@ -182,6 +186,10 @@ describe('Contact Form', () => {
 
   it("Shows an error when the user blurs the message textarea while it's empty", function () {
     cy.visit('/')
+
+    // Scroll to the bottom of the page so that the form elements appear.
+    cy.scrollTo('bottom')
+
     cy.getInputByLabel('Message')
       .focus()
       .blur()
