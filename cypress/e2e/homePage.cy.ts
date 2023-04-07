@@ -85,7 +85,7 @@ describe('/api/submit-inquiry', () => {
         failOnStatusCode: false,
         body: {
           name: 'Chris',
-          email: 'ck@aol', // invalid email
+          email: 'ck', // invalid email
           message: 'Hello World',
           recaptchaToken: 'test',
         },
