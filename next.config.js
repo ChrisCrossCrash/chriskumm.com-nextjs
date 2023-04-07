@@ -44,6 +44,11 @@ module.exports = {
         destination: 'https://github.com/ChrisCrossCrash',
         permanent: false,
       },
+      {
+        source: '/chatgpt-prompt-divider',
+        destination: 'https://chatgpt-prompt-divider.vercel.app/',
+        permanent: false,
+      },
     ]
   },
 }
