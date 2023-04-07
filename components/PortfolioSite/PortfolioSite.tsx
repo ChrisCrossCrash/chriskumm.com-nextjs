@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { KatoButton } from '../KatoButton/KatoButton'
 import { PortfolioSiteData } from '../../types/types'
 import styles from './PortfolioSite.module.scss'
