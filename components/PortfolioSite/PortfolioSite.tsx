@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { KatoButton } from '../KatoButton/KatoButton'
 import { PortfolioSiteData } from '../../types/types'
 import styles from './PortfolioSite.module.scss'
@@ -47,9 +47,10 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
           alt={props.project.title}
           className={styles.screenshot}
           placeholder='blur'
-          // Start loading when the bottom of the viewport is within 500px of the image.
-          lazyBoundary='500px'
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
 
       {/* Spacer element */}
@@ -82,5 +83,5 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
         )}
       </div>
     </div>
-  )
+  );
 }
