@@ -9,8 +9,8 @@ const NotFound = () => (
         😢
       </span>
     </h1>
-    <Link href='/'>
-      <a className={styles.link}>go to homepage</a>
+    <Link href='/' className={styles.link}>
+      go to homepage
     </Link>
   </div>
 )
