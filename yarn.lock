@@ -1161,10 +1161,10 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
 
-depth-section@^0.13.1:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/depth-section/-/depth-section-0.13.1.tgz#e6b9b0966f2fc3ad4ccd356b28b632853ace165d"
-  integrity sha512-IwX1BP+Oj0xhyoSRWpIxaJgEQfndcT3R3TwTb4lKM+puAHJBGPaMaRy2Z03g7crutgl4W2nK028HweOlP+y7eg==
+depth-section@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/depth-section/-/depth-section-0.16.0.tgz#a68c13281859a909ca05b4d457ce13fc9e30f6f8"
+  integrity sha512-wYcHVnD8gFo8TiQXGtml2EEEvAGV6YmfbC50INmfFrylc8Dv3wydoRQYALfSgazRiDGDE6zN0AhgJYwqpF9M1Q==
 
 detect-gpu@^5.0.14:
   version "5.0.18"
