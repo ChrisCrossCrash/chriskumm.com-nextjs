@@ -16,7 +16,7 @@
     "@fontsource/metropolis": "^5.0.5",
     "@react-three/drei": "9.77.10",
     "@react-three/fiber": "^8.13.5",
-    "depth-section": "^0.17.0",
+    "depth-section": "^0.17.1",
     "formik": "^2.4.2",
     "lint-staged": "^13.2.3",
     "modern-normalize": "^2.0.0",

@@ -21,8 +21,8 @@ dependencies:
     specifier: ^8.13.5
     version: 8.13.5(react-dom@18.2.0)(react@18.2.0)(three@0.154.0)
   depth-section:
-    specifier: ^0.17.0
-    version: 0.17.0(@react-three/drei@9.77.10)(@react-three/fiber@8.13.5)(react-dom@18.2.0)(react@18.2.0)(three@0.154.0)
+    specifier: ^0.17.1
+    version: 0.17.1(@react-three/drei@9.77.10)(@react-three/fiber@8.13.5)(react-dom@18.2.0)(react@18.2.0)(three@0.154.0)
   formik:
     specifier: ^2.4.2
     version: 2.4.2(react@18.2.0)
@@ -1009,8 +1009,8 @@ packages:
       three: 0.154.0
     dev: false
 
-  /caniuse-lite@1.0.30001516:
-    resolution: {integrity: sha512-Wmec9pCBY8CWbmI4HsjBeQLqDTqV91nFVR83DnZpYyRnPI1wePDsTg0bGLPC5VU/3OIZV1fmxEea1b+tFKe86g==}
+  /caniuse-lite@1.0.30001517:
+    resolution: {integrity: sha512-Vdhm5S11DaFVLlyiKu4hiUTkpZu+y1KA/rZZqVQfOD5YdDT/eQKlkt7NaE0WGOFgX32diqt9MiP9CAiFeRklaA==}
     dev: false
 
   /caseless@0.12.0:
@@ -1337,8 +1337,8 @@ packages:
     engines: {node: '>=0.4.0'}
     dev: true
 
-  /depth-section@0.17.0(@react-three/drei@9.77.10)(@react-three/fiber@8.13.5)(react-dom@18.2.0)(react@18.2.0)(three@0.154.0):
-    resolution: {integrity: sha512-77xWDGnW5nw0fisdbSZweaoBcaOwoVIHflg78PR0ieEnw1LJTsYH7c8wlmfdT5HmxCixnS3UNjnAa6nSkd3AZg==}
+  /depth-section@0.17.1(@react-three/drei@9.77.10)(@react-three/fiber@8.13.5)(react-dom@18.2.0)(react@18.2.0)(three@0.154.0):
+    resolution: {integrity: sha512-ERsTDfl1LxE9ymnux8ntfYCgc2NZoZdQYeLqEm289sJivCa4jmfW4gXSKxr6wmwY2pYmnM+HGmvMN6uPKBWRGA==}
     peerDependencies:
       '@react-three/drei': '>9.0.0'
       '@react-three/fiber': '>7.0.0'
@@ -2976,7 +2976,7 @@ packages:
       '@next/env': 13.4.10
       '@swc/helpers': 0.5.1
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001516
+      caniuse-lite: 1.0.30001517
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
