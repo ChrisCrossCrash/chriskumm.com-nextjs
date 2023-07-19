@@ -44,3 +44,6 @@ yarn-error.log*
 
 # JetBrains Project Files
 .idea
+
+# pnpm
+pnpm-lock.yaml
