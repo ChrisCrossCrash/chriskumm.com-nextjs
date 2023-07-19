@@ -34,7 +34,7 @@ const verifyToken = async (token: string): Promise<CaptchaValidation> => {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       },
       method: 'POST',
-    }
+    },
   )
   return captchaResponse.json()
 }
@@ -42,7 +42,7 @@ const verifyToken = async (token: string): Promise<CaptchaValidation> => {
 /** An API endpoint that receives messages from the contact form. */
 const submitQuery = async (
   request: NextApiRequest,
-  response: NextApiResponse
+  response: NextApiResponse,
 ) => {
   if (!(request.method === 'POST')) {
     return response.status(405).json({ message: 'Method not allowed' })

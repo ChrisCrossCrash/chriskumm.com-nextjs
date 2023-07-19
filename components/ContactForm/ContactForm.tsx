@@ -16,7 +16,7 @@ type SubmittedValues = {
 const handleSubmit = async (
   values: SubmittedValues,
   setSuccess: React.Dispatch<React.SetStateAction<boolean>>,
-  recaptchaRef: React.RefObject<ReCAPTCHA>
+  recaptchaRef: React.RefObject<ReCAPTCHA>,
 ) => {
   // What happens during form submission with Formik?:
   // https://formik.org/docs/guides/form-submission
@@ -93,7 +93,7 @@ export const ContactForm = () => {
 
   if (!recaptchaSiteKey) {
     throw new Error(
-      'NEXT_PUBLIC_RECAPTCHA_SITE_KEY could not be loaded from environmental variables.'
+      'NEXT_PUBLIC_RECAPTCHA_SITE_KEY could not be loaded from environmental variables.',
     )
   }
 

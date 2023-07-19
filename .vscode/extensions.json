@@ -3,6 +3,6 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "gruntfuggly.todo-tree",
-    "eamodio.gitlens",
+    "eamodio.gitlens"
   ]
 }

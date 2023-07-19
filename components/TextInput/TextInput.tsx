@@ -11,7 +11,7 @@ type TextInputProps = {
 
 export const TextInput = React.forwardRef(function TextInputInner(
   props: TextInputProps,
-  ref: React.ForwardedRef<HTMLDivElement>
+  ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   const { variant, label, id, className, ...fieldProps } = props
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]

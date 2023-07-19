@@ -151,7 +151,7 @@ describe('Contact Form', () => {
           statusCode: 201,
           body: { status: 'success' },
         })
-      }
+      },
     ).as('submitInquiry')
 
     cy.visit('/')

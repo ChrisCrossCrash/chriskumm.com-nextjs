@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import Image from "next/image"
+import Image from 'next/image'
 import { KatoButton } from '../KatoButton/KatoButton'
 import { PortfolioSiteData } from '../../types/types'
 import styles from './PortfolioSite.module.scss'
@@ -24,7 +24,7 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
         // is resized.
         entry.target.classList.toggle(
           textIsOnRightHalf ? 'fadeInFromRight' : 'fadeInFromLeft',
-          !entry.isIntersecting
+          !entry.isIntersecting,
         )
       }
     })
@@ -48,9 +48,10 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
           className={styles.screenshot}
           placeholder='blur'
           style={{
-            maxWidth: "100%",
-            height: "auto"
-          }} />
+            maxWidth: '100%',
+            height: 'auto',
+          }}
+        />
       </div>
 
       {/* Spacer element */}
@@ -83,5 +84,5 @@ export const PortfolioSite = (props: PortfolioSiteProps) => {
         )}
       </div>
     </div>
-  );
+  )
 }

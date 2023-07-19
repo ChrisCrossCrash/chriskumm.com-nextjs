@@ -7,7 +7,7 @@
 export const sendMessage = async (
   name: string,
   email: string,
-  message: string
+  message: string,
 ): Promise<Response> => {
   if (!process.env.TELEGRAM_TOKEN) {
     throw new Error('TELEGRAM_TOKEN environment variable is undefined')
@@ -27,11 +27,11 @@ export const sendMessage = async (
 
   if (process.env.NODE_ENV === 'development') {
     console.log(
-      `Sent message:\n${body.text}\n(This message would have been sent via Telegram in production.)`
+      `Sent message:\n${body.text}\n(This message would have been sent via Telegram in production.)`,
     )
 
     response = new Promise((resolve) =>
-      resolve(new Response(null, { status: 201 }))
+      resolve(new Response(null, { status: 201 })),
     )
   } else {
     response = fetch(url, {
