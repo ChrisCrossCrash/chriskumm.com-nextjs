@@ -1,12 +1,55 @@
 {
-  "eslint.packageManager": "yarn",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "npm.packageManager": "yarn",
-  "typescript.tsdk": "node_modules\\typescript\\lib",
+  // Prettier will wrap lines longer than 80 characters.
+  "editor.rulers": [
+    80
+  ],
+  "npm.packageManager": "pnpm",
+  // Use the project's version of TypeScript.
+  "typescript.tsdk": "node_modules/typescript/lib",
   "npm.enableRunFromFolder": true,
+  "npm.exclude": [
+    "**/.next/**"
+  ],
+  // Let Stylelint validate the CSS and SCSS files.
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules/*",
+    "**/.next/*",
+    "**/.cache/*",
+    "**/tmp/*",
+    "**/dist/*"
+  ],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "ISSUE"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "ISSUE": {
+      "icon": "issue-opened"
+    }
+  },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
+  },
+  "prettier.prettierPath": "./node_modules/prettier",
+  "files.associations": {
+    "ckeditor.txt": "javascript"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/.eslintcache": true,
+    "**/.next": true,
   }
 }
