@@ -6,7 +6,6 @@
   "editor.rulers": [
     80
   ],
-  "npm.packageManager": "pnpm",
   // Use the project's version of TypeScript.
   "typescript.tsdk": "node_modules/typescript/lib",
   "npm.enableRunFromFolder": true,
@@ -42,7 +41,6 @@
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
-  "prettier.prettierPath": "./node_modules/prettier",
   "files.associations": {
     "ckeditor.txt": "javascript"
   },
