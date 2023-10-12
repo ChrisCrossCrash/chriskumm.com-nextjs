@@ -1,5 +1,4 @@
 import styles from './Hero.module.scss'
-import { Waves } from '../Waves/Waves'
 import { DepthSectionMario } from './DepthSectionMario'
 
 export const Hero = () => (
