@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './SectionHeading.module.scss'
 
 export const SectionHeading = (props: { children: React.ReactNode }) => (

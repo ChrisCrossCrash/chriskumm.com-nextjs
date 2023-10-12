@@ -1,3 +1,4 @@
+import React from 'react'
 import { Suspense, useRef } from 'react'
 import { DepthSection, getCameraAimPos } from 'depth-section'
 import RPlaceModel from './RPlace'
