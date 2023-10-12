@@ -35,7 +35,7 @@
     "@types/react": "^18.2.28",
     "@types/react-google-recaptcha": "^2.1.6",
     "@types/three": "^0.157.0",
-    "cypress": "^12.17.4",
+    "cypress": "^13.3.1",
     "eslint": "^8.51.0",
     "eslint-config-next": "^13.5.4",
     "eslint-config-prettier": "^9.0.0",
