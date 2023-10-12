@@ -1,4 +1,5 @@
 extends:
   - eslint:recommended
   - next/core-web-vitals
+  - plugin:cypress/recommended
   - prettier
