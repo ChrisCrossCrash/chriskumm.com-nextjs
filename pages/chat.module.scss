@@ -1,0 +1,13 @@
+.base {
+  background-color: #222;
+  min-height: 100vh;
+  color: white;
+  display: grid;
+  place-content: center;
+}
+
+.chatContainer {
+  min-height: 500px;
+  max-height: 90vh;
+  width: 700px;
+}
