@@ -25,6 +25,5 @@ export const Hero = () => (
         </div>
       </div>
     </DepthSectionMario>
-    {/* <Waves /> */}
   </div>
 )
