@@ -54,8 +54,8 @@ export const DepthSectionMario = (props: DepthSectionMarioProps) => {
       }
     >
       <RPlaceInner />
-      <ambientLight intensity={0.5} />
-      <spotLight position={[4, 2.5, 2.5]} intensity={1.5} angle={2} />
+      <ambientLight intensity={2} />
+      <spotLight position={[4, 2.5, 2.5]} intensity={70} angle={2} />
     </DepthSection>
   )
 }
