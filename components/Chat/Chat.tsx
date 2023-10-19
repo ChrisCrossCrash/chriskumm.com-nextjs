@@ -3,11 +3,13 @@ import styles from './Chat.module.scss'
 import { ChatCompletionMessageParam } from 'openai/resources'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { Spinner } from '../Spinner/Spinner'
 
 type ChatHistory = ChatCompletionMessageParam[]
 
 /** A chat window for chatting with a bot. */
 function Chat() {
+  const [isLoading, setIsLoading] = useState(false)
   const [chatHistory, setChatHistory] = useState<ChatHistory>([
     {
       role: 'assistant',
@@ -16,7 +18,6 @@ function Chat() {
   ])
 
   const inputRef = useRef<HTMLTextAreaElement>(null)
-
   const messagesRef = useRef<HTMLDivElement>(null)
 
   // Auto-scroll when chatHistory changes
@@ -32,6 +33,8 @@ function Chat() {
 
     // If the input is empty, do nothing.
     if (!inputValue) return
+
+    setIsLoading(true)
 
     // Clear the input.
     inputRef.current!.value = ''
@@ -71,6 +74,8 @@ function Chat() {
         content: result,
       },
     ])
+
+    setIsLoading(false)
   }
 
   return (
@@ -87,6 +92,11 @@ function Chat() {
             {message.content}
           </Markdown>
         ))}
+        {isLoading && (
+          <div className={`${styles.message} ${styles.assistant}`}>
+            <Spinner className={styles.spinner} />
+          </div>
+        )}
       </div>
       <form
         className={styles.inputRow}
