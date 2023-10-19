@@ -1,3 +1,5 @@
+import path from 'path'
+import { promises as fs } from 'fs'
 import OpenAI from 'openai'
 import { ChatCompletionMessageParam } from 'openai/resources'
 
@@ -11,9 +13,13 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const clientMessages = req.body as ChatCompletionMessageParam[]
+  const content = await getTextFileString(
+    path.join(process.cwd(), 'data', 'system-message.md'),
+  )
+  console.log('content', content)
   const systemMessage: ChatCompletionMessageParam = {
     role: 'system',
-    content: 'You are a highly intelligent chatbot.',
+    content,
   }
   const messages = [systemMessage, ...clientMessages]
 
@@ -32,4 +38,10 @@ export default async function handler(
   console.log('result', result)
 
   res.status(200).json({ result })
+}
+
+/** Gets the content of a text file as a string. */
+async function getTextFileString(filePath: string): Promise<string> {
+  const fileContents = await fs.readFile(filePath, 'utf8')
+  return fileContents
 }
