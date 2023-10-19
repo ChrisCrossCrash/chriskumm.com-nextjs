@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react'
 import styles from './Chat.module.scss'
 import { ChatCompletionMessageParam } from 'openai/resources'
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 type ChatHistory = ChatCompletionMessageParam[]
 
@@ -13,21 +15,22 @@ function Chat() {
     },
   ])
 
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLTextAreaElement>(null)
 
   return (
     <div className={styles.base}>
       <div className={styles.messages}>
         {/* TODO: Auto-scroll to new messages. */}
         {chatHistory.map((message, index) => (
-          <div
+          <Markdown
             key={index}
             className={`${styles.message} ${
               message.role === 'user' ? styles.user : styles.assistant
             }`}
+            remarkPlugins={[remarkGfm]}
           >
             {message.content}
-          </div>
+          </Markdown>
         ))}
       </div>
       <form
@@ -79,10 +82,9 @@ function Chat() {
           ])
         }}
       >
-        <input
+        <textarea
           ref={inputRef}
           className={styles.chatInput}
-          type='text'
           name='message'
           id='message'
           placeholder='Type your message here...'
