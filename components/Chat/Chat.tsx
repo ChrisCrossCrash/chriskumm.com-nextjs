@@ -88,7 +88,13 @@ function Chat() {
           </Markdown>
         ))}
       </div>
-      <form className={styles.inputRow}>
+      <form
+        className={styles.inputRow}
+        onSubmit={(e) => {
+          e.preventDefault()
+          submitMessage()
+        }}
+      >
         <textarea
           ref={inputRef}
           className={styles.chatInput}
