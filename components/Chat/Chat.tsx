@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styles from './Chat.module.scss'
 import { ChatCompletionMessageParam } from 'openai/resources'
 import Markdown from 'react-markdown'
@@ -17,10 +17,19 @@ function Chat() {
 
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
+  const messagesRef = useRef<HTMLDivElement>(null)
+
+  // Auto-scroll when chatHistory changes
+  useEffect(() => {
+    const element = messagesRef.current
+    if (element) {
+      element.scrollTop = element.scrollHeight
+    }
+  }, [chatHistory])
+
   return (
     <div className={styles.base}>
-      <div className={styles.messages}>
-        {/* TODO: Auto-scroll to new messages. */}
+      <div className={styles.messages} ref={messagesRef}>
         {chatHistory.map((message, index) => (
           <Markdown
             key={index}
