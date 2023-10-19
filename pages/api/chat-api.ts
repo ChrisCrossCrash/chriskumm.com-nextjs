@@ -16,7 +16,6 @@ export default async function handler(
   const content = await getTextFileString(
     path.join(process.cwd(), 'data', 'system-message.md'),
   )
-  console.log('content', content)
   const systemMessage: ChatCompletionMessageParam = {
     role: 'system',
     content,
@@ -34,8 +33,6 @@ export default async function handler(
     res.status(500).json({ error: 'Something went wrong' })
     return
   }
-
-  console.log('result', result)
 
   res.status(200).json({ result })
 }
