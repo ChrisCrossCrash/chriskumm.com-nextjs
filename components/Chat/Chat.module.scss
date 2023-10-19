@@ -47,10 +47,12 @@
 
 .user {
   background-color: aquamarine;
-  align-self: flex-start;
+  align-self: flex-end;
+  margin-left: 2rem;
 }
 
 .assistant {
   background-color: #ddd;
-  align-self: flex-end;
+  align-self: flex-start;
+  margin-right: 2rem;
 }

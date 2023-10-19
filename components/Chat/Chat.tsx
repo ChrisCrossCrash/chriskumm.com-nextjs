@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styles from './Chat.module.scss'
 import { ChatCompletionMessageParam } from 'openai/resources'
 
@@ -13,7 +13,7 @@ function Chat() {
     },
   ])
 
-  const inputRef = React.createRef<HTMLInputElement>()
+  const inputRef = useRef<HTMLInputElement>(null)
 
   return (
     <div className={styles.base}>
@@ -39,36 +39,44 @@ function Chat() {
           // If the input is empty, do nothing.
           if (!inputValue) return
 
-          // Add the user's message to the chat history.
-          setChatHistory((history) => {
-            const newHistory = [...history]
-            newHistory.push({
-              role: 'user',
-              content: inputValue,
-            })
-            return newHistory
-          })
-
           // Clear the input.
           inputRef.current!.value = ''
 
-          // Fetch some data from JSONPlaceholder.
-          // TODO: Replace this with a real API call to the OpenAI API.
-          const response = await fetch(
-            'https://jsonplaceholder.typicode.com/todos/1',
-          )
+          // Add user input to chat immediately
+          setChatHistory((prevHistory) => [
+            ...prevHistory,
+            {
+              role: 'user',
+              content: inputValue,
+            },
+          ])
+
+          // Fetch the bot's response.
+          const response = await fetch('/api/chat-api', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify([
+              ...chatHistory,
+              {
+                role: 'user',
+                content: inputValue,
+              },
+            ]),
+          })
           const json = await response.json()
-          const result = json.title as string
+          const data = json as { result: string }
+          const { result } = data
 
           // Add the bot's response to the chat history.
-          setChatHistory((history) => {
-            const newHistory = [...history]
-            newHistory.push({
+          setChatHistory((prevHistory) => [
+            ...prevHistory,
+            {
               role: 'assistant',
               content: result,
-            })
-            return newHistory
-          })
+            },
+          ])
         }}
       >
         <input
