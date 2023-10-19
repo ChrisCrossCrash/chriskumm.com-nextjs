@@ -6,10 +6,19 @@
   color: var(--color-white);
 }
 
+.circle {
+  opacity: 0.25;
+}
+
+.arc {
+  opacity: 0.75;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
