@@ -3,7 +3,11 @@ import Chat from './Chat'
 
 describe('<Chat />', () => {
   beforeEach(() => {
-    cy.mount(<Chat />)
+    cy.mount(
+      <div style={{ height: '450px' }}>
+        <Chat />
+      </div>,
+    )
 
     // Mock the OpenAI API call
     cy.intercept('POST', '/api/chat-api', {
