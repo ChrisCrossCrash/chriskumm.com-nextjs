@@ -27,6 +27,52 @@ function Chat() {
     }
   }, [chatHistory])
 
+  const submitMessage = async () => {
+    const inputValue = inputRef.current?.value
+
+    // If the input is empty, do nothing.
+    if (!inputValue) return
+
+    // Clear the input.
+    inputRef.current!.value = ''
+
+    // Add user input to chat immediately
+    setChatHistory((prevHistory) => [
+      ...prevHistory,
+      {
+        role: 'user',
+        content: inputValue,
+      },
+    ])
+
+    // Fetch the bot's response.
+    const response = await fetch('/api/chat-api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify([
+        ...chatHistory,
+        {
+          role: 'user',
+          content: inputValue,
+        },
+      ]),
+    })
+    const json = await response.json()
+    const data = json as { result: string }
+    const { result } = data
+
+    // Add the bot's response to the chat history.
+    setChatHistory((prevHistory) => [
+      ...prevHistory,
+      {
+        role: 'assistant',
+        content: result,
+      },
+    ])
+  }
+
   return (
     <div className={styles.base}>
       <div className={styles.messages} ref={messagesRef}>
@@ -42,61 +88,22 @@ function Chat() {
           </Markdown>
         ))}
       </div>
-      <form
-        className={styles.inputRow}
-        onSubmit={async (e) => {
-          e.preventDefault()
-          const inputValue = inputRef.current?.value
-
-          // If the input is empty, do nothing.
-          if (!inputValue) return
-
-          // Clear the input.
-          inputRef.current!.value = ''
-
-          // Add user input to chat immediately
-          setChatHistory((prevHistory) => [
-            ...prevHistory,
-            {
-              role: 'user',
-              content: inputValue,
-            },
-          ])
-
-          // Fetch the bot's response.
-          const response = await fetch('/api/chat-api', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify([
-              ...chatHistory,
-              {
-                role: 'user',
-                content: inputValue,
-              },
-            ]),
-          })
-          const json = await response.json()
-          const data = json as { result: string }
-          const { result } = data
-
-          // Add the bot's response to the chat history.
-          setChatHistory((prevHistory) => [
-            ...prevHistory,
-            {
-              role: 'assistant',
-              content: result,
-            },
-          ])
-        }}
-      >
+      <form className={styles.inputRow}>
         <textarea
           ref={inputRef}
           className={styles.chatInput}
           name='message'
           id='message'
           placeholder='Type your message here...'
+          onKeyDown={(e) => {
+            // The behavior should be similar to the ChatGPT website.
+            // If the user presses enter (without shift), submit the form.
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault() // Prevent a newline from being inserted.
+              submitMessage()
+            }
+            // Otherwise, just do the default of inserting a newline.
+          }}
         />
         <input className={styles.submitBtn} type='submit' value='Send' />
       </form>
