@@ -7,8 +7,9 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "test-integration": "cypress run",
-    "test-integration:open": "cypress open",
+    "cypress:open": "cypress open",
+    "cypress:run-e2e": "cypress run",
+    "cypress:run-component": "cypress run --component",
     "prepare": "husky install"
   },
   "dependencies": {
