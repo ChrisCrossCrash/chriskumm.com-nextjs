@@ -11,7 +11,7 @@ function Chat() {
   const [chatHistory, setChatHistory] = useState<ChatHistory>([
     {
       role: 'assistant',
-      content: 'I am an AI created by OpenAI. How can I help you today?',
+      content: 'Hi! My name is Chris! Ask me anything.',
     },
   ])
 
