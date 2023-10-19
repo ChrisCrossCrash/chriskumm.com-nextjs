@@ -45,6 +45,22 @@
 .message {
   padding: 0 1rem;
   border-radius: 1rem;
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    border: 1px solid #aaa;
+    padding: 0.5rem;
+  }
+
+  pre {
+    background-color: #222;
+    color: white;
+    padding: 0.5rem;
+  }
 }
 
 .user {
