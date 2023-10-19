@@ -51,11 +51,9 @@ body {
   max-width: calc(100vw - var(--gutter-size));
 }
 
-/* Glassmorphism related properties */
-/* Warning: `backdrop-filter: blur()` doesn't work in Firefox with default settings (as of Jan 2021) */
+// Glassmorphism related properties
 .glass {
   backdrop-filter: blur(10px);
-  // border: solid 5px transparent;
   background-clip: padding-box;
   background-color: rgba(30, 30, 30, 0.7);
   padding: 2rem;
