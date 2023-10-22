@@ -105,7 +105,6 @@ export const ContactForm = () => {
         message: '',
       }}
       validationSchema={contactFormSchema}
-      // TODO: Manually test that a challenge is given when the form is submitted
       onSubmit={(values) => handleSubmit(values, setSuccess, recaptchaRef)}
     >
       {({ isSubmitting }: { isSubmitting: boolean }) => {
