@@ -4,6 +4,7 @@ import { ChatCompletionMessageParam } from 'openai/resources'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Spinner } from '../Spinner/Spinner'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 type ChatHistory = ChatCompletionMessageParam[]
 
@@ -19,6 +20,16 @@ function Chat() {
 
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const messagesRef = useRef<HTMLDivElement>(null)
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
+
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
+  // Validate ReCAPTCHA Site Key
+  if (!recaptchaSiteKey) {
+    throw new Error(
+      'NEXT_PUBLIC_RECAPTCHA_SITE_KEY could not be loaded from environmental variables.',
+    )
+  }
 
   // Auto-scroll when chatHistory changes
   useEffect(() => {
@@ -33,6 +44,18 @@ function Chat() {
 
     // If the input is empty, do nothing.
     if (!inputValue) return
+
+    // Execute ReCAPTCHA
+    let recaptchaToken: string | null | undefined
+    if (process.env.NODE_ENV === 'development') {
+      recaptchaToken = 'testRecaptchaToken'
+    } else {
+      recaptchaToken = await recaptchaRef.current?.executeAsync()
+    }
+
+    if (typeof recaptchaToken !== 'string') {
+      throw new Error('Recaptcha token is not a string')
+    }
 
     setIsLoading(true)
 
@@ -54,14 +77,18 @@ function Chat() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify([
-        ...chatHistory,
-        {
-          role: 'user',
-          content: inputValue,
-        },
-      ]),
+      body: JSON.stringify({
+        history: [
+          ...chatHistory,
+          {
+            role: 'user',
+            content: inputValue,
+          },
+        ],
+        recaptchaToken,
+      }),
     })
+
     const json = await response.json()
     const data = json as { result: string }
     const { result } = data
@@ -122,6 +149,11 @@ function Chat() {
           }}
         />
         <input className={styles.submitBtn} type='submit' value='Send' />
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          size='invisible'
+          sitekey={recaptchaSiteKey}
+        />
       </form>
     </div>
   )
