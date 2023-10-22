@@ -39,7 +39,7 @@ const handleSubmit = async (
   }
 
   try {
-    response = await fetch('/api/submit-inquiry/', {
+    response = await fetch('/api/submit-inquiry', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
