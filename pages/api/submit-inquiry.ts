@@ -26,6 +26,7 @@ const submitQuery = async (
   const { name, email, message, recaptchaToken }: { [key: string]: string } =
     request.body
 
+  // Verify the ReCAPTCHA token
   try {
     let verification: CaptchaValidation | undefined
 
