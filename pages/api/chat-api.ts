@@ -73,6 +73,11 @@ export default async function handler(
 
 /** Gets the content of a text file as a string. */
 async function getTextFileString(filePath: string): Promise<string> {
-  const fileContents = await fs.readFile(filePath, 'utf8')
-  return fileContents
+  try {
+    const fileContents = await fs.readFile(filePath, 'utf8')
+    return fileContents
+  } catch (error) {
+    console.error('Error reading file:', error)
+    throw new Error('Failed to read file')
+  }
 }
