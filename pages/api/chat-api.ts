@@ -23,6 +23,10 @@ export default async function handler(
 
   const { clientMessages, recaptchaToken } = req.body as ChatApiRequest
 
+  if (!clientMessages || !recaptchaToken) {
+    return res.status(400).json({ message: 'Bad request: Invalid form data' })
+  }
+
   // Verify the ReCAPTCHA token
   try {
     let verification: CaptchaValidation | undefined
