@@ -78,7 +78,7 @@ function Chat() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        history: [
+        clientMessages: [
           ...chatHistory,
           {
             role: 'user',
