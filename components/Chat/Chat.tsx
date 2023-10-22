@@ -72,6 +72,8 @@ function Chat() {
     ])
 
     // Fetch the bot's response.
+    // TODO: Connect to a new Django endpoint.
+    // https://github.com/ChrisCrossCrash/chriskumm.com-nextjs/issues/9
     const response = await fetch('/api/chat-api', {
       method: 'POST',
       headers: {
