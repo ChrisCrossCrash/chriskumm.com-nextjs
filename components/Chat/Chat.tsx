@@ -41,6 +41,7 @@ function Chat() {
 
   const submitMessage = async () => {
     const inputValue = inputRef.current?.value
+    const recaptcha = recaptchaRef.current
 
     // If the input is empty, do nothing.
     if (!inputValue) return
@@ -50,7 +51,7 @@ function Chat() {
     if (process.env.NODE_ENV === 'development') {
       recaptchaToken = 'testRecaptchaToken'
     } else {
-      recaptchaToken = await recaptchaRef.current?.executeAsync()
+      recaptchaToken = await recaptcha?.executeAsync()
     }
 
     if (typeof recaptchaToken !== 'string') {
@@ -101,6 +102,9 @@ function Chat() {
         content: result,
       },
     ])
+
+    // Reset the ReCAPTCHA widget so that it can be used again.
+    recaptcha?.reset()
 
     setIsLoading(false)
   }
