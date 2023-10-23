@@ -59,3 +59,9 @@ body {
   padding: 2rem;
   border-radius: 2rem;
 }
+
+// Hide the Google ReCAPTCHA badge
+// https: //www.npmjs.com/package/react-google-recaptcha#hiding-the-recaptcha
+.grecaptcha-badge {
+  visibility: hidden;
+}
