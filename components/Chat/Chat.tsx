@@ -120,7 +120,7 @@ function Chat() {
             }`}
             remarkPlugins={[remarkGfm]}
           >
-            {message.content}
+            {message.content as string}
           </Markdown>
         ))}
         {isLoading && (
