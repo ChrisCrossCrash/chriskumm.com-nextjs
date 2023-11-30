@@ -5,20 +5,8 @@ import ckMockup from '../public/images/mockup_ck.png'
 import blenderLogo from '../public/images/blender-logo.jpg'
 import rPlaceGigapixel from '../public/images/mockup_rplacegiga.png'
 import depthSectionMockup from '../public/images/mockup_depthsection.png'
-import chatGptPromptDividerMockup from '../public/images/mockup_chatgpt-prompt-divider.png'
 
 export const portfolioSites: PortfolioSiteData[] = [
-  {
-    title: 'ChatGPT Prompt Divider',
-    subtitle: 'Website',
-    description:
-      'A website for dividing ChatGPT prompts into smaller chunks. This site was created in just a few hours using AI technologies like ChatGPT and Bing AI. It used my custom Next.js template as a starting point.',
-    features: 'Simple UI, responsive design, AI-generated favicon',
-    technologies:
-      'ChatGPT (for generating a large portion of the code), Bing AI (for generating the favicon), React TypeScript, Next.js, Sass (SCSS modules), Vercel',
-    screenshot: chatGptPromptDividerMockup,
-    url: 'https://chatgpt-prompt-divider.vercel.app/',
-  },
   {
     title: 'MLK Seminars',
     subtitle: 'Commercial website',
