@@ -177,7 +177,7 @@ export const ContactForm = () => {
             )}
             <div className={styles.recaptchaInfo}>
               <small>
-                This site is protected by reCAPTCHA and the Google{' '}
+                This site is protected by reCAPTCHA. Google&apos;s{' '}
                 <a href='https://policies.google.com/privacy'>Privacy Policy</a>{' '}
                 and{' '}
                 <a href='https://policies.google.com/terms'>Terms of Service</a>{' '}
