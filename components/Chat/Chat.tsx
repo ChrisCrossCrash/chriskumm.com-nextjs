@@ -73,22 +73,25 @@ function Chat() {
     ])
 
     // Fetch the bot's response.
-    const response = await fetch('https://api.chriskumm.com/api/ai-chat/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/ai-chat/`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          clientMessages: [
+            ...chatHistory,
+            {
+              role: 'user',
+              content: inputValue,
+            },
+          ],
+          recaptchaToken,
+        }),
       },
-      body: JSON.stringify({
-        clientMessages: [
-          ...chatHistory,
-          {
-            role: 'user',
-            content: inputValue,
-          },
-        ],
-        recaptchaToken,
-      }),
-    })
+    )
 
     const json = await response.json()
     const data = json as { result: string }
